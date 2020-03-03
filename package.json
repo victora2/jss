@@ -9,7 +9,8 @@
     "test-packages": "lerna run test --ignore *-sample*",
     "build-apps": "lerna run build --scope *-sample*",
     "test": "lerna run test",
-    "coverage-packages": "lerna run coverage --ignore *-sample*"
+    "coverage-packages": "lerna run coverage --ignore *-sample*",
+    "cleanDocs": "node scripts/cleanDocs.js && lerna run docs"
   },
   "author": {
     "name": "Sitecore Corporation",
