@@ -8,7 +8,8 @@
     "lint": "tslint -p . -c ../../tslint.json 'src/**/*.ts'",
     "test": "mocha --require ts-node/register \"./src/**/*.test.ts\"",
     "prepublishOnly": "npm run build",
-    "coverage": "nyc --require ts-node/register npm test"
+    "coverage": "nyc --require ts-node/register npm test",
+    "docs": "npx typedoc --out ./../../docs/data/routes/api/sitecore-jss src --plugin typedoc-plugin-markdown"
   },
   "engines": {
     "node": ">=8.1"
@@ -39,6 +40,8 @@
     "sinon": "^7.5.0",
     "ts-node": "^8.4.1",
     "tslib": "^1.10.0",
+    "typedoc": "^0.16.11",
+    "typedoc-plugin-markdown": "^2.2.17",
     "typescript": "^3.6.3"
   },
   "dependencies": {
