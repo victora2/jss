@@ -1,0 +1,36 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Generate Markdown Docs",
+      "program": "${workspaceRoot}/scripts/generateMarkdownDocs.js",
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Clean Docs",
+      "program": "${workspaceRoot}/scripts/cleanDocs.js",
+    },
+    {
+      "name": "npm run script",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}/packages/sitecore-jss",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "docs3"],
+      "port": 5858
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Docs debugger",
+      "url": "http://localhost:3001",
+      "webRoot": "${workspaceRoot}/docs/src"
+    }
+  ]
+}
