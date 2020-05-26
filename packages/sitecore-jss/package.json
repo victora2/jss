@@ -9,7 +9,7 @@
     "test": "mocha --require ts-node/register \"./src/**/*.test.ts\"",
     "prepublishOnly": "npm run build",
     "coverage": "nyc --require ts-node/register npm test",
-    "docs": "npx typedoc --out ./../../docs/data/routes/api/sitecore-jss src --plugin typedoc-plugin-markdown"
+    "docs": "npx typedoc --plugin typedoc-plugin-markdown --theme './../../jss-docs-theme' --out './../../docs2/sitecore-jss'"
   },
   "engines": {
     "node": ">=8.1"
