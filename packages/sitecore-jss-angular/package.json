@@ -40,6 +40,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.3",
     "tsickle": "^0.37.0",
+    "typedoc": "^0.17.4",
     "typescript": "~3.5.0",
     "url-parse": "^1.4.7",
     "zone.js": "~0.10.2"

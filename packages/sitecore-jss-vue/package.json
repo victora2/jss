@@ -46,7 +46,8 @@
     "vue": "^2.6.10"
   },
   "dependencies": {
-    "@sitecore-jss/sitecore-jss": "^13.0.2"
+    "@sitecore-jss/sitecore-jss": "^13.0.2",
+    "typedoc": "^0.17.4"
   },
   "types": "./types/index.d.ts",
   "gitHead": "2f4820efddf4454eeee58ed1b2cc251969efdf5b"
