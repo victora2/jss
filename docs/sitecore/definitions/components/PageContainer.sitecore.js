@@ -1,6 +1,13 @@
 export default (manifest) => {
   manifest.addComponent({
     name: 'PageContainer',
-    fields: [],
+		fields: [],
+		placeholders: [
+			'jssdocs-jumbo',
+			'jssdocs-hero',
+			'jssdocs-tiles-headline',
+			'jssdocs-content',
+			'jssdocs-banner'
+		],
   });
 };

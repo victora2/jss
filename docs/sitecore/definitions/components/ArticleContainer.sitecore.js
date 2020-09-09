@@ -10,6 +10,10 @@ export default (manifest) => {
         name: 'useSearch',
         type: manifest.fieldTypes.singleLineText,
       },
-    ],
+		],
+		placeholders: [
+			'jssdocs-jumbo',
+			'jssdocs-content'
+		]
   });
 };

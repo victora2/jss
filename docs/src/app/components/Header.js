@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom';
+import sitecoreLogo from 'assets/img/sitecore-logo.svg';
 
 const Logo = () => (
-  <img src="/assets/img/sitecore-logo.svg" height="53px" alt="Sitecore JSS" className="logo" />
+  <img src={sitecoreLogo} height="53px" alt="Sitecore JSS" className="logo" />
 );
 
 const Header = ({ fields }) => (

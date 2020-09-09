@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import chalk from 'chalk';
+import CopyPlugin from 'copy-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import jssConfig from '../config';
@@ -99,9 +100,9 @@ export default function(envVars) {
     resolve: {
       symlinks: false,
       modules: [path.resolve(process.cwd(), 'src'), 'node_modules'],
-      extensions: ['.js', '.jsx', '.react.js'],
+      extensions: ['.js', '.jsx', '.react.js', '.svg'],
       alias: {
-        assets: path.resolve(process.cwd(), 'assets'),
+				assets: path.resolve(process.cwd(), 'assets'),
       },
     },
     plugins: [
@@ -121,7 +122,13 @@ export default function(envVars) {
 }
 
 function getExtraPlugins(envVars) {
-  const plugins = [];
+	const plugins = [];
+
+	if (envVars.nodeSsr) {
+		plugins.push(
+			new CopyPlugin([{ from: path.resolve('assets'), to: 'assets' }])
+		)
+	}
 
   // minify JS in production (options based on create-react-app)
   if (envVars.production) {
@@ -174,9 +181,10 @@ function getGlobalVariables(envVars) {
     __SC_API_HOST__: JSON.stringify(jssConfig.sitecore.layoutServiceHost),
     __SC_API_KEY__: JSON.stringify(jssConfig.sitecore.apiKey),
     __TRANSLATION_PATH__: JSON.stringify(jssConfig.translationPath),
-    __BUNDLE_OUTPUT_PATH__: JSON.stringify(normalizeFrontendPath(envVars.publicPath)),
-  };
-
+		__BUNDLE_OUTPUT_PATH__: JSON.stringify(normalizeFrontendPath(envVars.publicPath)),
+		__ASSETS_PATH__: envVars.nodeSsr ? JSON.stringify(normalizeFrontendPath(`${envVars.publicPath}/assets`)) : JSON.stringify('/assets')
+	};
+	
   const nodeEnv = envVars.production ? 'production' : 'development';
 
   // if we're disconnected and running webpack-dev-server, we want content from localhost

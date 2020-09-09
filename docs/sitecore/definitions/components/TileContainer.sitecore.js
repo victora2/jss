@@ -1,6 +1,9 @@
 export default (manifest) => {
   manifest.addComponent({
     name: 'TileContainer',
-    fields: [],
+		fields: [],
+		placeholders: [
+			'jssdocs-tiles'
+		]
   });
 };

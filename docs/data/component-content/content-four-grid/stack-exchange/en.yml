@@ -1,5 +1,5 @@
 id: stack-exchange
-name: sitecore-slack
+name: stack-exchange
 componentName: Tile
 fields:
   cssclass:

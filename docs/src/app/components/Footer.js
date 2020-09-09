@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import sitecoreLogo from 'assets/img/sitecore-logo.svg';
 
 const Logo = () => (
-  <img src="/assets/img/sitecore-logo.svg" height="53px" className="logo" alt="Sitecore JSS" />
+  <img src={sitecoreLogo} height="53px" className="logo" alt="Sitecore JSS" />
 );
 
 const Footer = ({ fields }) => (

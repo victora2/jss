@@ -1,4 +1,4 @@
-/* global __BUNDLE_OUTPUT_PATH__ */
+/* global __BUNDLE_OUTPUT_PATH__, __ASSETS_PATH__ */
 
 import React from 'react';
 import ReactDOM from 'react-dom/server';
@@ -66,6 +66,7 @@ const renderView = (callback, path, data, viewBag) => {
             component={renderResult.jsx}
             initialState={state}
             distPath={__BUNDLE_OUTPUT_PATH__}
+						assetsPath={__BUNDLE_OUTPUT_PATH__}
           />
         );
 
