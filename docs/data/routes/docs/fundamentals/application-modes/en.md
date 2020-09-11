@@ -26,7 +26,7 @@ For production:
 
 With disconnected mode, content data is mocked using local files (json/yaml/js) instead of a Sitecore instance. Disconnected mode is advantageous when there is no available Sitecore instance to deploy the app to, where most developer expertise is in JavaScript, or when it is undesirable to have frontend developers need their own Sitecore instance such as using Macs without a virtual machine to host Sitecore. All of the sample applications can run in disconnected mode.
 
-![disconnected mode diagram](/assets/img/mode-disconnected.svg)
+![disconnected mode diagram](/dist/JssDocs/assets/img/mode-disconnected.svg)
 
 Disconnected mode apps can [import themselves](/docs/techniques/working-disconnected/import-process) to Sitecore, creating all necessary Sitecore items for them to run in connected mode later.
 
@@ -46,7 +46,7 @@ A common development path might be for an application's lifecycle to begin in di
 
 In connected mode, a Sitecore instance is required. The Sitecore databases hold the content, layout data, and component registrations. Unlike _disconnected mode_ defining local mock data is unnecessary. When the app is run, the data is acquired from Sitecore using HTTP data calls.
 
-![connected mode diagram](/assets/img/mode-connected.svg)
+![connected mode diagram](/dist/JssDocs/assets/img/mode-connected.svg)
 
 #### Characteristics
 - Rendering performed by the browser
@@ -71,7 +71,7 @@ This mode hosts your JSS app within a Sitecore instance. The application is _ser
 
 This mode allows your Sitecore users to manage content, presentation and other marketing features for your JSS app using Sitecore's Experience Editor. 
 
-![integrated mode diagram](/assets/img/mode-integrated.svg)
+![integrated mode diagram](/dist/JssDocs/assets/img/mode-integrated.svg)
 
 #### Characteristics
 - Rendering performed by server (SSR by [Node instances orchestrated by Sitecore](/docs/fundamentals/services/view-engine#nodejs-rendering-engine) or via a [remote rendering host](/docs/fundamentals/services/view-engine#http-rendering-engine)) 
@@ -93,7 +93,7 @@ This mode allows for running your app on any platform that supports `node.js` an
 - Full Sitecore marketing/personalization engine support
 - Usages: decoupling rendering of the JSS app from Sitecore, multichannel API usage
 
-![headless mode diagram](/assets/img/mode-headless.svg)
+![headless mode diagram](/dist/JssDocs/assets/img/mode-headless.svg)
 
 ### How to use
 

@@ -9,7 +9,7 @@ title: Caching
 ## Sitecore Output Caching in MVC vs JSS
 Sitecore caching in JSS does not work the same way as it does in MVC.
 
-![Sitecore output caching](/assets/img/sitecore-output-caching.png)
+![Sitecore output caching](/dist/JssDocs/assets/img/sitecore-output-caching.png)
 
 In MVC, output caching saves the **HTML** that is returned by the renderRendering pipeline for any rendering which has caching enabled. So on subsequent requests, we already have the HTML for the rendering and no additional processing needs to be performed.
 

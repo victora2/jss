@@ -21,7 +21,7 @@ delimited with a forward slash ('/'), like a URL path.
 
 This is best understood visually.
 
-![Sitecore Layout](/assets/img/sitecore-layout.gif)
+![Sitecore Layout](/dist/JssDocs/assets/img/sitecore-layout.gif)
 
 However the shortcomings of this addressing system become apparent when you attempt to place the same
 component more than once at the same placeholder address.
@@ -29,7 +29,7 @@ component more than once at the same placeholder address.
 In the example layout below, it's unclear which *Tabs* component the *Tab* should be placed in when
 given the placeholder path */phContent/phTab*. Out of the box, Sitecore would put it in the first one.
 
-![Which Placeholder?](/assets/img/which-placeholder.png)
+![Which Placeholder?](/dist/JssDocs/assets/img/which-placeholder.png)
 
 To overcome this, we can make the placeholder keys *dynamic*. There are three main approaches to doing so:
 
@@ -39,7 +39,7 @@ To overcome this, we can make the placeholder keys *dynamic*. There are three ma
 
 The UID approach is a bit more resilient when it comes to moving component and other scenarios in the Sitecore Experience Editor.
 
-![Dynamic Placeholder](/assets/img/dynamic-placeholder.png)
+![Dynamic Placeholder](/dist/JssDocs/assets/img/dynamic-placeholder.png)
 
 ### Dynamic Placeholders in Sitecore JSS
 

@@ -22,7 +22,7 @@ It's up to you how the Layout Service is invoked in your app, and how language c
 
 In order to simulate translated content from the Layout Service, the Disconnected Layout Service mocks the interface of the Sitecore Layout Service including the language data. The Disconnected Layout Service is powered by the JSS Manifest data, which is single-language. However, DLS re-generates the manifest on the fly when a different language is requested by the app. Data needs to be available in multiple languages to support this use case; the sample apps have a default convention of using `lang.yml` (or JSON) files to enable definition of different languages' contents and layout.
 
-![Translated Route Files](/assets/img/recipe-content-translation-dev-routes.png)
+![Translated Route Files](/dist/JssDocs/assets/img/recipe-content-translation-dev-routes.png)
 
 This is only the default convention for multilingual content for sample apps, defined in `/sitecore/definitions/routes.sitecore.js`. You can define your own conventions and ways to store multilingual data that matches your preferences and needs.
 

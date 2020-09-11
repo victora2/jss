@@ -69,7 +69,7 @@ The pipeline group for all JSS pipelines is `javaScriptServices`.
 
 #### Pipeline Relationships
 
-![Import Pipelines](/assets/img/import-pipelines.png)
+![Import Pipelines](/dist/JssDocs/assets/img/import-pipelines.png)
 
 #### `import`
 

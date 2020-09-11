@@ -39,7 +39,7 @@ The import process kicked off by the Manifest Package is comprised of a series o
 | `import.layout` | Populates the layout of an imported item.
 | `create.renderingInstance` | Creates a rendering instance for use in imported item layout. |
 
-![Import Pipelines](/assets/img/import-pipelines.png)
+![Import Pipelines](/dist/JssDocs/assets/img/import-pipelines.png)
 
 > Pipelines are configured in  `\App_Config\Sitecore\JavaScriptServices\Sitecore.JavaScriptServices.AppServices.config`, but you should use a configuration patch for any adjustments.
 

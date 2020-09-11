@@ -18,7 +18,7 @@ In a _headless_ topology, a traditional Sitecore XP (or XM) deployment is turned
 
 > Note: this guide will not cover how to configure a Sitecore deployment outside of its interaction with JSS. Consult the [Sitecore documentation](https://doc.sitecore.net) to familiarize yourself with Sitecore deployment topologies outside of JSS.
 
-![headless topology](/assets/img/headless-topology.svg)
+![headless topology](/dist/JssDocs/assets/img/headless-topology.svg)
 
 When running in headless mode, the Sitecore CD servers do not directly serve the public website. Instead, a cluster of inexpensive Node.js servers host the public-facing website. These Node servers will run [node-headless-ssr-proxy](https://github.com/Sitecore/jss/tree/master/samples/node-headless-ssr-proxy). This server-side rendering (SSR) proxy will make requests to the JSS APIs running on the Sitecore CD servers and then render the JSS application to HTML before returning it to the client. These SSR proxies can be hosted anywhere Node can run, from Heroku to Azure App Service. 
 
@@ -32,7 +32,7 @@ In an _integrated_ topology, the Sitecore CD servers perform the server-side ren
 
 There is also less flexibility to do advanced client-side routing scenarios when using integrated topology, as the requests are still pre-parsed by Sitecore and subject to Sitecore routing. In headless mode, it's possible to run custom Express middleware to customize the server extensively. In integrated mode, the same customizations would be Sitecore (C#) customizations instead.
 
-![integrated topology](/assets/img/integrated-topology.svg)
+![integrated topology](/dist/JssDocs/assets/img/integrated-topology.svg)
 
 > Note: We do not recommend integrated mode for heavy load production scenarios, because the entire page is server-side rendered using Node.js as a block, not as individual renderings, so traditional output caching mechanisms become all-or-nothing. In other words, if caching is enabled, it forces caching of the entire page, which is almost always not what is desired.
 

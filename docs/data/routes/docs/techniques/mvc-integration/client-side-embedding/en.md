@@ -53,11 +53,11 @@ Characteristics of such apps include:
 1. Deploy the app to Sitecore with `jss deploy app --includeContent --includeDictionary` (or shortcut `jss deploy app -c -d`).
 1. Open the Sitecore Content Editor and ensure the app has installed at `/sitecore/content/Home/EmbeddedWizard` 
 
-    ![Embedded Wizard app deployed](/assets/img/wizard-app-deployed-items.png)
+    ![Embedded Wizard app deployed](/dist/JssDocs/assets/img/wizard-app-deployed-items.png)
 
 1. Browse to *http://[sitecorehost]/EmbeddedWizard/Wizard* and ensure the app runs independently in Integrated Mode:
 
-    ![Embedded Wizard app integrated](/assets/img/wizard_success.png)
+    ![Embedded Wizard app integrated](/dist/JssDocs/assets/img/wizard_success.png)
 
 ### Step 2. Configure wizard placement
 
@@ -97,7 +97,7 @@ Fastest option. This package contains the rendering items, Sublayout and modifie
 
     You should see the app embedded in the Sitecore sample home.
 
-    ![Embedded Wizard app integrated](/assets/img/wizard-integrated.png)
+    ![Embedded Wizard app integrated](/dist/JssDocs/assets/img/wizard-integrated.png)
 
 ## How it Works
 

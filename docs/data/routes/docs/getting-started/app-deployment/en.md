@@ -33,7 +33,7 @@ If you are using a local Sitecore instance, ensure the desired host name is mapp
 
 After adding the host name entry, add it as a binding on your IIS instance as well:
 
-<img src="/assets/img/iis-bindings.png" alt="IIS Bindings" class="img-fluid img-thumbnail" />
+<img src="/dist/JssDocs/assets/img/iis-bindings.png" alt="IIS Bindings" class="img-fluid img-thumbnail" />
 
 > If you are planning on deploying multiple JSS applications, you will need to configure different hosts and host name bindings in IIS in order for Sitecore to resolve the proper site.
 
@@ -46,7 +46,7 @@ The services used by JSS (including the [Layout Service](/docs/fundamentals/serv
 
      > Using the database icon in the lower right, switch to the *core* database. In Sitecore 9.1 and later, the API key is stored in the *master* database instead, which is the default, so this step is unnecessary.
 
-     > <img src="/assets/img/switch-core-db.png" alt="Core Database" class="img-fluid img-thumbnail" />
+     > <img src="/dist/JssDocs/assets/img/switch-core-db.png" alt="Core Database" class="img-fluid img-thumbnail" />
 
 1. From the start menu / Sitecore icon, open the *Content Editor* application.
 1. Navigate to */sitecore/system/Settings/Services/API Keys* in the content tree, and via right-click or the *Home* ribbon, insert a new *API Key* item. The item can be named anything; the name is for your reference only. Pick something meaningful, e.g. the name of your app.
@@ -66,7 +66,7 @@ The services used by JSS (including the [Layout Service](/docs/fundamentals/serv
 
 1. Save the API key item, publish it (Sitecore 9.1+) and make note of its **Item ID** (see screenshot below, highlighted). You'll need this ID to connect the JSS app.
 
-  <img src="/assets/img/ssc-api-key.png" alt="API Key" class="img-fluid img-thumbnail" />
+  <img src="/dist/JssDocs/assets/img/ssc-api-key.png" alt="API Key" class="img-fluid img-thumbnail" />
 
 The services utilized by JSS will honor the configuration options on the API Key, including Allowed Controllers, CORS Origins, and Impersonation User. See the [SSC Documentation](https://doc.sitecore.net/sitecore_experience_platform/developing/developing_with_sitecore/sitecoreservicesclient/api_keys_for_the_odata_item_service) for more information on this configuration.
 
@@ -150,7 +150,7 @@ If you are using local self-signed certificate:
   1. Open a command prompt/terminal within your JSS app. If you know certificate value skip to step 4.
   1. Run command using wrong certificate thumbprint `jss deploy app --includeContent --includeDictionary --acceptCertificate test`
   1. From error message copy certificate thumbprint and paste instead of `test`
-  <img src="/assets/img/certificate-error.png" alt="Certificate error" class="img-fluid img-thumbnail" />
+  <img src="/dist/JssDocs/assets/img/certificate-error.png" alt="Certificate error" class="img-fluid img-thumbnail" />
   1. `jss deploy app --includeContent --includeDictionary --acceptCertificate CA:CD:3B:DB:19:D1:97:92:F9:80:91:FF:32:CC:F8:35:DC:F5:0B:01`
 
 If you are not using local self-signed certificate:
@@ -193,19 +193,19 @@ Check to make sure your app looks correct in Sitecore by logging in and opening 
 #### 1. Content shows up in Content Tree
 To test, log into your Sitecore instance using the selected app host `http://myapp.siteco.re/sitecore/` and open Content Editor. You should see the app item under `/sitecore/content`:
 
-<img src="/assets/img/jss-tree.png" alt="Great success!" class="img-fluid img-thumbnail" />
+<img src="/dist/JssDocs/assets/img/jss-tree.png" alt="Great success!" class="img-fluid img-thumbnail" />
 
 #### 2. App is rendered by Sitecore
 
 You should now be able to run the JSS app in _integrated mode_ by visiting the host name that was configured for the site, e.g. `http://myapp.siteco.re/`. If integrated mode is working correctly, viewing source should reveal a fully rendered app with complete HTML.
 
-<img src="/assets/img/jss-deployed.png" alt="Great success!" class="img-fluid img-thumbnail" />
+<img src="/dist/JssDocs/assets/img/jss-deployed.png" alt="Great success!" class="img-fluid img-thumbnail" />
 
 #### 3. App is editable in Experience Editor
 
 Try launching the `/Home` page in Experience Editor. For example, `http://myapp.siteco.re/?sc_mode=edit` - or launch it from the dashboard:
 
-<img src="/assets/img/basic-app-editable-ee.png" alt="Fully editable app in Experience Editor!" class="img-fluid img-thumbnail" />
+<img src="/dist/JssDocs/assets/img/basic-app-editable-ee.png" alt="Fully editable app in Experience Editor!" class="img-fluid img-thumbnail" />
 
 
 ## Now what?

@@ -9,7 +9,7 @@ JSS provides the capability to consume and post [Sitecore Forms](https://doc.sit
 
 Usage of Sitecore Forms in JSS works like this:
 
-![forms service sequence diagram](/assets/img/jss-forms-sequence.svg)
+![forms service sequence diagram](/dist/JssDocs/assets/img/jss-forms-sequence.svg)
 
 ## Getting Started
 

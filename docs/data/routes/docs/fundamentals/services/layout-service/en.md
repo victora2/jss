@@ -14,7 +14,7 @@ Content Testing, and the Experience Editor. By leveraging the same engine to pro
 JSON output, the Layout Service decouples "layout" and "rendering," enabling you to render
 Sitecore components in your chosen JavaScript framework.
 
-![Layout Service Flow](/assets/img/layout-service-flow.svg)
+![Layout Service Flow](/dist/JssDocs/assets/img/layout-service-flow.svg)
 
 The Layout Service provides additional data about the requested item as well:
 
@@ -73,7 +73,7 @@ rather just through the code of the rendering itself -- e.g. `@Html.Sitecore().P
 to make these "exposed" placeholders discoverable, the Layout Service adds a new field to the Sitecore rendering
 definition.
 
-![Exposed Placeholders](/assets/img/layout-service-exposed-placeholders.png)
+![Exposed Placeholders](/dist/JssDocs/assets/img/layout-service-exposed-placeholders.png)
 
 > This is not to be confused with the `Allowed Controls` on Placeholder Settings, which defines what renderings can be added to a placeholder. The `Layout Service Placeholders` field defines the placeholders that will be used within the rendering in your JavaScript component.
 

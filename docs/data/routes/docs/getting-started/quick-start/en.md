@@ -78,7 +78,7 @@ For example, `jss create myapp react` would create a React sample in a `myapp` f
 The app will be built and a local development server will be started.
 Your default browser should open with `http://localhost:3000` and your JSS app is rendered:
 
-<img src="/assets/img/jss-built.png" alt="JSS app" />
+<img src="/dist/JssDocs/assets/img/jss-built.png" alt="JSS app" />
 
 > The `jss` command knows how to execute scripts from your `package.json` (npm scripts). `jss start` and other build commands are defined by package scripts so that you may customize your build as you wish. Other commands, such as `jss manifest` and `jss deploy` are natively part of the JSS CLI - though they may call your build scripts if they need to.
 

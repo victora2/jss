@@ -23,7 +23,7 @@ When the Sitecore Layout Service renders a page, it returns a JSON representatio
 
 Integrated GraphQL operates by storing the GraphQL query in the `Component GraphQL Query` field on the component's rendering item. For example the GraphQL sample app sets a query on `/sitecore/layout/Renderings/JssBasicAppGraphQL/IntegratedPage`.
 
-![GraphQL Field](/assets/img/gql-field.png)
+![GraphQL Field](/dist/JssDocs/assets/img/gql-field.png)
 
 > The `Open xGraph Browser` button will open the GraphiQL query editor and prefill the current query value so that you can edit and test it. The query is not auto-saved back into Sitecore; copy and paste the modified query back when done.
 

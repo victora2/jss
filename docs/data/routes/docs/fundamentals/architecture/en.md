@@ -12,7 +12,7 @@ Driving layout dynamically enables JSS apps to support content editor driven lay
 
 ## JSS Elements
 
-<img alt="JSS High Level Elements" src="/assets/img/jss-high-level-elements.png" class="img-fluid img-thumbnail" />
+<img alt="JSS High Level Elements" src="/dist/JssDocs/assets/img/jss-high-level-elements.png" class="img-fluid img-thumbnail" />
 
 * **JSS SDKs**: A series of **[npm packages](https://www.npmjs.com/org/sitecore-jss)** facilitate working with Sitecore data and layout in JavaScript. Framework-specific SDKs provide Sitecore's dynamic *placeholder* layout system and helpers for rendering Sitecore fields so they can be editable by authors.
 * **[Sitecore Layout Service](/docs/fundamentals/services/layout-service)**: provides the composition of route/pages, as well as the needed data for each component. The client SDKs make it easy to consume this data and render a data-driven (that is, Sitecore-driven) layout.
@@ -21,7 +21,7 @@ Driving layout dynamically enables JSS apps to support content editor driven lay
 
 ## Sitecore Integration and Data Flow
 
-<img alt="JSS Sitecore Integration and Data Flow" src="/assets/img/jss-sitecore-integration-data-flow.png" class="img-fluid img-thumbnail" />
+<img alt="JSS Sitecore Integration and Data Flow" src="/dist/JssDocs/assets/img/jss-sitecore-integration-data-flow.png" class="img-fluid img-thumbnail" />
 
 * Using [manifest definitions](/docs/techniques/working-disconnected/manifest-api) and the [JSS CLI](/docs/fundamentals/cli), developers can deploy an application "code first" via the [Import Service](/docs/fundamentals/services/app-import). Note that this is optional -- you always have the option of working [Sitecore-first](/docs/fundamentals/dev-workflows/sitecore-first).
 * As described above, the [Layout Service](/docs/fundamentals/services/layout-service) provides the data needed to render the JSS app. It is typically consumed for both initial render on the server, as well as directly from the browser on route change.

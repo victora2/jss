@@ -50,7 +50,7 @@ The JSS import process is designed to gracefully skip items to which the configu
 
 To further facilitate this, JSS includes a content workflow which is automatically applied to all generated templates. This workflow defines *Development Mode* and *Content Mode* states to designate the current "ownership" of a content item.
 
-![JSS Workflow](/assets/img/jss-workflow.png "JSS Workflow")
+![JSS Workflow](/dist/JssDocs/assets/img/jss-workflow.png "JSS Workflow")
 
 | Workflow State     |         |
 |:-------------------|--------:|
@@ -85,11 +85,11 @@ Similar to designating content author "ownership" of content items is JSS's use 
 
 Denying `item:write` and `item:create` access to the `sitecore\JSS Import Service Users` role or the specific import user allows a Sitecore developer or admin to limit items that the front-end developer can create and update. The import process will gracefully skip those items and output a warning indicating that it has done so. This allows the Sitecore developer to tweak the imported items without fear that the changes will be overwritten.
 
-![Item skip in import log](/assets/img/security-item-skip.png "Item skip in import log")
+![Item skip in import log](/dist/JssDocs/assets/img/security-item-skip.png "Item skip in import log")
 
 To facilitate these restrictions, JSS provides two security presets that can be used to quickly protect items from the import process.
 
-![JSS Security Presets](/assets/img/security-presets.png "Security presets")
+![JSS Security Presets](/dist/JssDocs/assets/img/security-presets.png "Security presets")
 
 >Note that you may need to scroll past the default Sitecore `Remove Inherit` and `Require Login` presets to see these options, or use the dropdown button of the `Presets` box to see them all.
 

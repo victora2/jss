@@ -16,7 +16,7 @@ JSS comes with a `RenderStaticItemProcessor` class which is not enabled by defau
 
 To get started, you need an item to render the layout of. The simplest way to do this is to create a _route_ item - it already has the right layout, and will render correctly for Experience Editor.
 
-![route item](/assets/img/static-rendering-route.png)
+![route item](/dist/JssDocs/assets/img/static-rendering-route.png)
 
 In order to create the layout on this item, you will need to also create a new placeholder, i.e. `jss-header`:
 
@@ -24,7 +24,7 @@ In order to create the layout on this item, you will need to also create a new p
 * Create a placeholder settings item in `/sitecore/layout/Placeholder Settings`
 * Add the allowed component(s) to the placeholder settings item
 * Add the placeholder settings item to the `Layout Service Placeholders` field on your JSS app's _layout item_ (in `/sitecore/layout/Layouts/JavaScriptServices`)
-    ![setting LS placeholders field](/assets/img/static-rendering-ls-placeholders.png)
+    ![setting LS placeholders field](/dist/JssDocs/assets/img/static-rendering-ls-placeholders.png)
 
 ## Adding the static rendering to Layout Service context
 
@@ -150,7 +150,7 @@ That's all there is to it - if you enter Experience Editor on your static render
 
 Feel free to try some personalization settings too!
 
-![editing a static item](/assets/img/static-rendering-ee.png)
+![editing a static item](/dist/JssDocs/assets/img/static-rendering-ee.png)
 
 ## Limitations
 
