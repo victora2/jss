@@ -14,8 +14,8 @@ Use `jss start` to run a local development server. It will start by default on `
 
 1. Use `jss setup` to configure app:
 	* layoutServiceHost - it is hostname of your node-headless-proxy
-	* deployUrl - it is CD instance
-1. Set hostName in `sitecore/jss-basic-app.config` as CD instance. (without protocol)
+	* deployUrl - it is CM instance
+1. Set hostName in `sitecore/jss-basic-app.config` as CD instance (without protocol). Set database as `web`
 1. Copy sitecore/config: site and deploysecret to: CM Include/zzz
 1. Copy sitecore/config: site to: CD Include/zzz
 1. Use `jss deploy items -c -d` to deploy items
@@ -33,12 +33,9 @@ Use `jss start` to run a local development server. It will start by default on `
 	process.env.SITECORE_API_HOST = 'https://sitecoremanagementservices1000xm-163-cd.azurewebsites.net'
 	process.env.SITECORE_API_KEY = '{1B42637F-963E-41AC-A9CA-357640D68B2E}'
 	```
+1. Copy node-headless-proxy app to your Azure Web app
+1. Use SSH to run `npm i` inside Web app
 
-In case if you have problems with loading of images, scripts:
-temporary solution related to Content-Security-Policy header, remove from Web.config:
-```
-<add name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com; upgrade-insecure-requests; block-all-mixed-content;" />
-```
 `
 In order to copy node-headless-proxy files to Azure App Service, use: Deployment Center -> ftp
 `
