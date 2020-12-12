@@ -62,14 +62,14 @@ steps:
     git config user.name "Automated Build"
     git remote set-url origin https://nickwesselman:$GITHUB-PAT-ENV@github.com/Sitecore/jss.git
     git checkout $(Build.SourceBranchName)
-    $(npm bin)/lerna version prerelease --preid canary --force-publish
+    $(npm bin)/lerna version prerelease --preid canary --force-publish --yes
   displayName: 'pre-release version update'
   condition: and(succeeded(), eq(variables.isDev, true))
   env:
     GITHUB-PAT-ENV: $(GITHUB-PAT)
 - script: 
     echo //registry.npmjs.org/:_authToken=${NPM-TOKEN-ENV} > .npmrc
-    $(npm bin)/lerna publish from-git --canary --pre-dist-tag canary --preid canary
+    $(npm bin)/lerna publish from-git --canary --pre-dist-tag canary --preid canary --yes
   displayName: 'pre-release canary publish'
   condition: and(succeeded(), eq(variables.isDev, true))
   env:
