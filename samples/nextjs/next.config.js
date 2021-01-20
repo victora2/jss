@@ -1,3 +1,4 @@
+const path = require('path');
 const jssConfig = require('./src/temp/config');
 const packageConfig = require('./package.json').config;
 const { JSS_MODE_DISCONNECTED } = require('@sitecore-jss/sitecore-jss-nextjs');
@@ -10,6 +11,10 @@ const isDisconnected = process.env.JSS_MODE === JSS_MODE_DISCONNECTED;
 const publicUrl = process.env.PUBLIC_URL;
 
 const nextConfig = {
+
+  sassOptions: {
+    includePaths: [path.join(__dirname, './src/styles')],
+  },
 
   // Set assetPrefix to our public URL
   assetPrefix: publicUrl,

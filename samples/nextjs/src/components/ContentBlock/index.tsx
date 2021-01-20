@@ -1,9 +1,6 @@
 import { Text, RichText, Field } from '@sitecore-jss/sitecore-jss-nextjs';
 import { StyleguideComponentProps } from 'lib/component-props';
 
-import styles from './ContentBlock.module.css';
-import globalStyles from '../../styles/Global.module.css';
-
 type ContentBlockProps = StyleguideComponentProps & {
   fields: {
     heading: Field<string>;
@@ -17,7 +14,7 @@ type ContentBlockProps = StyleguideComponentProps & {
  * JSS component that's useful.
  */
 const ContentBlock = ({ fields }: ContentBlockProps): JSX.Element => (
-  <div className={`${styles.red} ${globalStyles.blue}`}>
+  <div className="content-block">
     <Text tag="h2" className="display-4" field={fields.heading} />
     <RichText className="contentDescription" field={fields.content} />
   </div>

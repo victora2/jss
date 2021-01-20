@@ -11,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'nprogress/nprogress.css';
 import 'assets/app.css';
 
+import 'styles/app.scss';
+
 NProgress.configure({ showSpinner: false, trickleSpeed: 100 });
 
 Router.events.on('routeChangeStart', () => NProgress.start());
