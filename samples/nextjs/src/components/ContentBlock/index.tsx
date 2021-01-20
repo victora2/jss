@@ -1,5 +1,14 @@
 import { Text, RichText, Field } from '@sitecore-jss/sitecore-jss-nextjs';
 import { StyleguideComponentProps } from 'lib/component-props';
+import styled from 'styled-components';
+
+const Styled = styled.div.attrs({ className: "styled-class"})`
+  background-color: red;
+
+  p {
+    background-color: ${({theme}) => theme.colors.main};
+  }
+`;
 
 type ContentBlockProps = StyleguideComponentProps & {
   fields: {
@@ -15,9 +24,10 @@ type ContentBlockProps = StyleguideComponentProps & {
  */
 const ContentBlock = ({ fields }: ContentBlockProps): JSX.Element => (
   <>
-    <Text tag="h2" className="display-4" field={fields.heading} />
-
-    <RichText className="contentDescription" field={fields.content} />
+    <Styled>
+      <Text tag="h2" className="display-4" field={fields.heading} />
+      <RichText className="contentDescription" field={fields.content} />
+    </Styled>
   </>
 );
 

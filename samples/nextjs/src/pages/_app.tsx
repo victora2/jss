@@ -3,6 +3,8 @@ import Router from 'next/router';
 import { I18nProvider } from 'next-localization';
 import NProgress from 'nprogress';
 
+import { ThemeProvider, createGlobalStyle  } from 'styled-components';
+
 // Using bootstrap and nprogress are completely optional.
 //  bootstrap is used here to provide a clean layout for samples, without needing extra CSS in the sample app
 //  nprogress provides a loading indicator on page/route changes
@@ -10,6 +12,14 @@ import NProgress from 'nprogress';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'nprogress/nprogress.css';
 import 'assets/app.css';
+
+import 'assets/styled.css'
+
+const GlobalStyle = createGlobalStyle`
+  body .styled-class h2 {
+    background-color: purple;
+  }
+`;
 
 NProgress.configure({ showSpinner: false, trickleSpeed: 100 });
 
@@ -21,12 +31,15 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
   const { dictionary, ...rest } = pageProps;
 
   return (
-    // Use the next-localization (w/ rosetta) library to provide our translation dictionary to the app.
-    // Note Next.js does not (currently) provide anything for translation, only i18n routing.
-    // If your app is not multilingual, next-localization and references to it can be removed.
-    <I18nProvider lngDict={dictionary} locale={pageProps.locale}>
-      <Component {...rest} />
-    </I18nProvider>
+        // Use the next-localization (w/ rosetta) library to provide our translation dictionary to the app.
+        // Note Next.js does not (currently) provide anything for translation, only i18n routing.
+        // If your app is not multilingual, next-localization and references to it can be removed.
+    <ThemeProvider theme={{ colors: { main: "pink", secondary: "yellow"} }}>
+      <GlobalStyle />
+      <I18nProvider lngDict={dictionary} locale={pageProps.locale}>
+        <Component {...rest} />
+      </I18nProvider>
+    </ThemeProvider>
   );
 }
 
