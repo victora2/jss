@@ -1,3 +1,4 @@
+require('dotenv').config();
 const fs = require('fs');
 const fetch = require('node-fetch');
 const NodeCache = require('node-cache');
@@ -24,6 +25,12 @@ httpAgents.setUpDefaultAgents(serverBundle);
 const apiHost = process.env.SITECORE_API_HOST || 'http://my.sitecore.host'
 
 appName = appName || serverBundle.appName;
+
+const graphQLEndpoint = process.env.SITECORE_GRAPHQL_ENDPOINT || serverBundle.graphQLEndpoint || `${apiHost}/api/${appName}`;
+
+const defaultLanguage = process.env.DEFAULT_LANGUAGE || serverBundle.defaultLanguage || 'en';
+
+const hostname = process.env.SITECORE_HOSTNAME || serverBundle.hostname || apiHost;
 
 /**
  * @type {ProxyConfig}
@@ -163,6 +170,52 @@ const config = {
         return viewBag;
       });
   },
+  getRedirects: () => {
+    return fetch(graphQLEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: `
+        query {
+          search(fieldsEqual: [{ name: "_templatename", value: "Redirect Route" }]) {
+            results {
+              items {
+                item {
+                  url
+                  field(name: "Destination") {
+                    ... on LinkField {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `
+      })
+    }).then(response => response.json())
+      .then(response => {
+        // Layout Service returns paths with language included. But end-user may not have
+        // language in the URL if site is in the default language. So need to
+        const re = new RegExp(`^(?:${hostname})(?:\/${defaultLanguage})?(\/.+)$`);
+        function getNormalizedPath(url) {
+          return re.test(url) ? url.match(re)[1] : url;
+        }
+
+        return response.data.search.results.items.reduce((redirects, searchResult) => {
+          const source = searchResult.item?.url;
+          const destination = searchResult.item?.field?.url;
+
+          if (source && destination) {
+            redirects[getNormalizedPath(source)] = getNormalizedPath(destination);
+          }
+
+          console.log(JSON.stringify(redirects, null, 4));
+          return redirects;
+        }, {});
+      });
+  }
 };
 
 module.exports = config;
