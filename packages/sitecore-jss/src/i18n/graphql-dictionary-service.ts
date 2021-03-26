@@ -1,20 +1,19 @@
 import { GraphQLRequestClient } from '../graphql-request-client';
 import { SitecoreTemplateId } from '../constants';
 import { DictionaryPhrases, DictionaryServiceBase, CacheOptions } from './dictionary-service';
-
-const DEFAULTS = Object.freeze({
-  pageSize: 10,
-});
+import { EdgeClient, SearchQueryParams } from '../graphql-api';
+import gql from 'graphql-tag';
 
 // TODO: use graphql import instead of string (Anastasiya, March 2021)
+/*
 const query = `
 query DictionarySearch(
-    $rootItemId: String!,
-    $language: String!,
-    $dictionaryEntryTemplateId: String!,
-    $pageSize: Int = 10,
-    $after: String
-  ) {
+  $rootItemId: String!,
+  $language: String!,
+  $dictionaryEntryTemplateId: String!,
+  $pageSize: Int = 10,
+  $after: String
+) {
   search(
     where: {
       AND:[
@@ -43,27 +42,13 @@ query DictionarySearch(
   }
 }
 `;
+*/
 
 /**
  * Configuration options for @see GraphQLDictionaryService instances
  */
-export interface GraphQLDictionaryServiceConfig extends CacheOptions {
-  /**
-   * The URL of the graphQL endpoint.
-   */
+export interface GraphQLDictionaryServiceConfig extends SearchQueryParams, CacheOptions {
   endpoint: string;
-
-  /**
-   * The GUID of the Sitecore item to use as the root for the dictionary service search.
-   * @default The GUID of the root item of the specified Sitecore site.
-   */
-  rootItemId?: string;
-
-  /**
-   * How many dictionary items to fetch in each GraphQL call. This is needed for pagination.
-   * @default 10
-   */
-  pageSize?: number;
 
   /**
    * The name of the current Sitecore site.
@@ -74,12 +59,9 @@ export interface GraphQLDictionaryServiceConfig extends CacheOptions {
 /**
  * A reply from the GraphQL Sitecore Dictionary Service
  */
-type DictionaryQueryResult = {
+/*
+type DictionaryQueryResult = SearchQueryResult & {
   search: {
-    pageInfo: {
-      endCursor: string;
-      hasNext: boolean;
-    };
     dictionaryPhrases: {
       key: {
         value: string;
@@ -88,6 +70,16 @@ type DictionaryQueryResult = {
         value: string;
       };
     }[];
+  };
+};
+*/
+
+type DictionaryResult = {
+  key: {
+    value: string;
+  };
+  phrase: {
+    value: string;
   };
 };
 
@@ -102,46 +94,46 @@ export class GraphQLDictionaryService extends DictionaryServiceBase {
    */
   constructor(public options: GraphQLDictionaryServiceConfig) {
     super(options);
-    this.options.pageSize = this.options.pageSize ?? DEFAULTS.pageSize;
+    this.options.pageSize = this.options.pageSize ?? 10; // DEFAULTS.pageSize;
   }
 
   /**
    * Fetches dictionary data for internalization.
    * @param {string} language the language to fetch
-   * @default Search query
+   * @default query:
    * query DictionarySearch(
-   * $rootItemId: String!,
-   * $language: String!,
-   * $dictionaryEntryTemplateId: String!,
-   * $pageSize: Int = 10,
-   * $after: String
-   * ) {
-   * search(
-   * where: {
-   * AND:[
-   * { name: "_path",      value: $rootItemId },
-   * { name: "_templates", value: $dictionaryEntryTemplateId },
-   * { name: "_language",  value: $language }
-   * ]
-   * }
-   * first: $pageSize
-   * after: $after
-   * orderBy: { name: "Title", direction: ASC }
-   * ) {
-   * total
-   * pageInfo {
-   * endCursor
-   * hasNext
-   * }
-   * dictionaryPhrases: results {
-   * key: field(name: "key") {
-   * value
-   * },
-   * phrase: field(name: "phrase") {
-   * value
-   * }
-   * }
-   * }
+   *   $rootItemId: String!,
+   *   $language: String!,
+   *   $dictionaryEntryTemplateId: String!,
+   *   $pageSize: Int = 10,
+   *   $after: String
+   * ){
+   *   search(
+   *     where: {
+   *       AND:[
+   *         { name: "_path",      value: $rootItemId },
+   *         { name: "_templates", value: $dictionaryEntryTemplateId },
+   *         { name: "_language",  value: $language }
+   *       ]
+   *      }
+   *      first: $pageSize
+   *      after: $after
+   *      orderBy: { name: "Title", direction: ASC }
+   *   ){
+   *     total
+   *     pageInfo {
+   *       endCursor
+   *       hasNext
+   *     }
+   *     dictionaryPhrases: results {
+   *       key: field(name: "key") {
+   *       value
+   *       },
+   *       phrase: field(name: "phrase") {
+   *         value
+   *       }
+   *     }
+   *   }
    * }
    */
   async fetchDictionaryData(language: string): Promise<DictionaryPhrases> {
@@ -151,12 +143,30 @@ export class GraphQLDictionaryService extends DictionaryServiceBase {
       return cachedValue;
     }
 
-    const client = new GraphQLRequestClient(this.options.endpoint);
+    const client = new EdgeClient(this.options.endpoint);
     if (!this.options.rootItemId) {
       this.options.rootItemId = await getSiteRoot(client, this.options.siteName, language);
     }
 
-    const results = await this.getDictionaryPhrases(client, language);
+    const rawResults = await client.doSearchQuery<DictionaryResult>(
+      this.options,
+      gql`
+        fragment SearchResults on Item {
+          key: field(name: "key") {
+            value
+          }
+          phrase: field(name: "phrase") {
+            value
+          }
+        }
+      `
+    );
+    // const results = await this.getDictionaryPhrases(client, language);
+
+    const results: DictionaryPhrases = {};
+    rawResults.forEach((dictionaryPhrase) => {
+      results[dictionaryPhrase.key.value] = dictionaryPhrase.phrase.value;
+    });
     this.setCacheValue(cacheKey, results);
     return results;
   }
@@ -167,6 +177,7 @@ export class GraphQLDictionaryService extends DictionaryServiceBase {
    * @param {string} language
    * @returns dictionary phrases
    */
+  /*
   async getDictionaryPhrases(
     client: GraphQLRequestClient,
     language: string
@@ -195,6 +206,7 @@ export class GraphQLDictionaryService extends DictionaryServiceBase {
 
     return results;
   }
+  */
 }
 
 // TODO: Move to shared area and reuse for sitemap service (Anastasiya, March 2021)
