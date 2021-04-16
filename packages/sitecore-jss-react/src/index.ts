@@ -18,6 +18,18 @@ export {
   ComponentRendering,
   ComponentFields,
   ComponentParams,
+  LayoutPersonalizationService,
+  LayoutPersonalizationUtils,
+  LayoutFragmentData,
+  LayoutFragmentService,
+  GraphQLLayoutFragmentService,
+  GraphQLLayoutFragmentServiceConfig,
+  PersonalizationDecisionData,
+  RenderingPersonalizationDecision,
+  PersonalizationDecisionsService,
+  PersonalizationDecisionsServiceConfig,
+  SitecorePersonalizationContext,
+  SitecorePersonalizationContextState,
 } from '@sitecore-jss/sitecore-jss';
 export { ComponentFactory } from './components/sharedTypes';
 export { Placeholder } from './components/Placeholder';
@@ -29,10 +41,18 @@ export { Link, LinkField, LinkFieldValue, LinkProps, LinkPropTypes } from './com
 export { File, FileField } from './components/File';
 export { VisitorIdentification } from './components/VisitorIdentification';
 export {
+  SitecorePersonalizationContextProps,
+  SitecorePersonalizationReactContext,
+  withSitecorePersonalizationContext,
+} from './enhancers/withSitecorePersonalizationContext';
+export {
   SitecoreContext,
   SitecoreContextState,
   SitecoreContextReactContext,
+  SitecoreContextProps,
 } from './components/SitecoreContext';
 export { withSitecoreContext, useSitecoreContext } from './enhancers/withSitecoreContext';
 export { withExperienceEditorChromes } from './enhancers/withExperienceEditorChromes';
 export { withPlaceholder } from './enhancers/withPlaceholder';
+export { withComponentFactory } from './enhancers/withComponentFactory';
+export { usePersonalization } from './enhancers/usePersonalization';

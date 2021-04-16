@@ -38,6 +38,16 @@ export {
   ComponentFields,
   ComponentParams,
   isServer,
+  LayoutPersonalizationService,
+  LayoutFragmentData,
+  LayoutFragmentService,
+  GraphQLLayoutFragmentService,
+  GraphQLLayoutFragmentServiceConfig,
+  PersonalizationDecisionData,
+  RenderingPersonalizationDecision,
+  PersonalizationDecisionsService,
+  PersonalizationDecisionsServiceConfig,
+  LayoutPersonalizationUtils,
 } from '@sitecore-jss/sitecore-jss';
 
 export { ManifestInstance } from '@sitecore-jss/sitecore-jss-manifest';
@@ -70,7 +80,7 @@ export {
   useComponentProps,
 } from './components/ComponentPropsContext';
 
-export { handleExperienceEditorFastRefresh } from './utils';
+export { handleExperienceEditorFastRefresh, areQueryParamsReady } from './utils';
 
 export { EditingData, EditingPreviewData, isEditingData } from './sharedTypes/editing-data';
 export {
@@ -81,6 +91,7 @@ export {
 
 export { Link } from './components/Link';
 export { RichText } from './components/RichText';
+export { withSitecorePersonalizationContext } from './enhancers/withSitecorePersonalizationContext';
 
 export {
   ComponentFactory,
@@ -96,9 +107,16 @@ export {
   VisitorIdentification,
   SitecoreContext,
   SitecoreContextState,
+  SitecoreContextProps,
   SitecoreContextReactContext,
   withSitecoreContext,
   useSitecoreContext,
   withExperienceEditorChromes,
   withPlaceholder,
+  withComponentFactory,
+  usePersonalization,
+  SitecorePersonalizationContextProps,
+  SitecorePersonalizationReactContext,
+  SitecorePersonalizationContext,
+  SitecorePersonalizationContextState,
 } from '@sitecore-jss/sitecore-jss-react';

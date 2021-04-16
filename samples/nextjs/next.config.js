@@ -20,6 +20,7 @@ const nextConfig = {
   // Make the same PUBLIC_URL available as an environment variable on the client bundle
   env: {
     PUBLIC_URL: publicUrl,
+    IS_TRACKING_ENABLED: process.env.IS_TRACKING_ENABLED,
   },
 
   i18n: {
