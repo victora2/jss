@@ -1,0 +1,14 @@
+# proof of concept github action - can use for linting, version bumps, assign reviewers, etc.
+name: action demo
+  on: 
+    pull_request:
+      types: opened
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # lists all files in the repo
+      - name: echo filenames
+        run: for i in ./**/**/*; do echo $i; done;
