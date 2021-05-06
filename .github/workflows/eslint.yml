@@ -1,0 +1,11 @@
+# run lint script on PR
+name: action demo
+  on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: echo filenames
+        run: for i in ./**/**/*; do echo $i; done;
