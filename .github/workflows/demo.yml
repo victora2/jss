@@ -1,6 +1,6 @@
 # proof of concept github action - can use for linting, version bumps, assign reviewers, etc.
 name: action demo
-  on: 
+  on:
     pull_request:
       types: opened
 
