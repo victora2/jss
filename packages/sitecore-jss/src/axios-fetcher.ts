@@ -37,6 +37,7 @@ export type AxiosDataFetcherConfig = AxiosRequestConfig & AxiosDataFetcherOption
 /**
  * Determines whether error is AxiosError
  * @param {unknown} error
+ * @returns {AxiosError}
  */
 const isAxiosError = (error: unknown): error is AxiosError => {
   return (error as AxiosError).isAxiosError !== undefined;
@@ -103,6 +104,7 @@ export class AxiosDataFetcher {
    * @param {string} url The URL to request; may include query string
    * @param {any} [data] Optional data to POST with the request.
    * @returns {Promise<AxiosResponse<T>>} response
+   * @throws {AxiosError} Axios error
    */
   fetch<T>(url: string, data?: unknown): Promise<AxiosResponse<T>> {
     return this.instance.request({
@@ -127,6 +129,7 @@ export class AxiosDataFetcher {
    * @param {string} url The URL to request; may include query string
    * @param {AxiosRequestConfig} [config] Axios config
    * @returns {Promise<AxiosResponse>} response
+   * @throws {AxiosError} Axios error
    */
   head(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse> {
     return this.instance.head(url, config);
@@ -138,6 +141,7 @@ export class AxiosDataFetcher {
    * @param {any} [data] Data to POST with the request.
    * @param {AxiosRequestConfig} [config] Axios config
    * @returns {Promise<AxiosResponse>} response
+   * @throws {AxiosError} Axios error
    */
   post(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<AxiosResponse> {
     return this.instance.post(url, data, config);
@@ -149,6 +153,7 @@ export class AxiosDataFetcher {
    * @param {any} [data] Data to PUT with the request.
    * @param {AxiosRequestConfig} [config] Axios config
    * @returns {Promise<AxiosResponse>} response
+   * @throws {AxiosError} Axios error
    */
   put(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<AxiosResponse> {
     return this.instance.put(url, data, config);
@@ -159,6 +164,7 @@ export class AxiosDataFetcher {
    * @param {string} url The URL to request; may include query string
    * @param {AxiosRequestConfig} [config] Axios config
    * @returns {Promise<AxiosResponse>} response
+   * @throws {AxiosError} Axios error
    */
   delete(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse> {
     return this.instance.delete(url, config);
