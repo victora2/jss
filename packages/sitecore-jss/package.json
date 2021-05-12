@@ -9,9 +9,7 @@
     "test": "mocha --require ts-node/register \"./src/**/*.test.ts\"",
     "prepublishOnly": "npm run build",
     "coverage": "nyc --require ts-node/register npm test",
-    "generate-docs:html": "typedoc --plugin none --out docs/html ./src/index.ts",
-    "generate-docs:md": "typedoc --plugin typedoc-plugin-markdown --out docs/markdown ./src/index.ts",
-    "generate-docs": "npm run generate-docs:html && npm run generate-docs:md"
+    "generate-docs:md": "typedoc --plugin typedoc-plugin-markdown --readme none --out docs ./src/index.ts"
   },
   "engines": {
     "node": ">=8.1"
