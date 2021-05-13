@@ -12,6 +12,7 @@ const NotFound = (): JSX.Element => {
       .catch((error) => console.error('Tracking failed: ' + error.message));
   }
 
+
   return (
     <>
       <Head>
