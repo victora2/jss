@@ -91,6 +91,6 @@
     "start:disconnected-proxy": "ts-node --project tsconfig.scripts.json ./scripts/disconnected-mode-proxy.ts",
     "start:production": "npm-run-all --serial bootstrap next:build next:start",
     "start:watch-components": "ts-node --project tsconfig.scripts.json scripts/generate-component-factory.ts --watch",
-	"deploy:versel": "npm install -g @sitecore-jss/sitecore-jss-cli && jss setup --layoutServiceHost "https://mykc-xpsingle-single.azurewebsites.net" --apiKey "{9D2ECD0F-68F1-461D-B3FB-2EFAFEBCB232}" --deployUrl "https://mykc-xpsingle-single.azurewebsites.net/sitecore/api/jss/import" --deploySecret "bnueux807kewb80l8wekclpm20e99sjxg3sf8u60mq" --nonInteractive --skipValidation && npm run build && jss deploy items --includeContent --includeDictionary"
+	  "deploy:versel": "npm install -g @sitecore-jss/sitecore-jss-cli && jss setup --layoutServiceHost \"https://mykc-xpsingle-single.azurewebsites.net\" --apiKey \"{9D2ECD0F-68F1-461D-B3FB-2EFAFEBCB232}\" --deployUrl \"https://mykc-xpsingle-single.azurewebsites.net/sitecore/api/jss/import\" --deploySecret \"bnueux807kewb80l8wekclpm20e99sjxg3sf8u60mq\" --nonInteractive --skipValidation && npm run build && jss deploy items --includeContent --includeDictionary"
   }
 }
