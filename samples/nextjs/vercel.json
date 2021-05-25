@@ -4,6 +4,7 @@
     "trailingSlash": false,
     "name": "jss",
     "version": 2,
+	
     "routes": [
         {
           "src": "/favicon.ico",
