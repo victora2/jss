@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import fs from 'fs';
 import fetch from 'node-fetch';
 import NodeCache from 'node-cache';
 import httpAgents from './httpAgents';
 import { ServerBundle, ErrorResponse } from './models';
-import { ProxyConfig } from '@sitecore-jss/sitecore-jss-proxy/types/ProxyConfig';
 import { IncomingMessage, ServerResponse } from 'http';
 
 // We keep a cached copy of the site dictionary for performance. Default is 60 seconds.
@@ -29,7 +30,7 @@ const apiHost = process.env.SITECORE_API_HOST || 'http://my.sitecore.host';
 
 appName = appName || serverBundle.appName;
 
-const config: ProxyConfig & { serverBundle: ServerBundle } = {
+const config = {
   /**
    * The required server.bundle.js file from your pre-built JSS app
    */
@@ -104,7 +105,7 @@ const config: ProxyConfig & { serverBundle: ServerBundle } = {
     _request: IncomingMessage,
     _response: ServerResponse,
     proxyResponse: IncomingMessage
-  ) => {
+  ): void => {
     delete proxyResponse.headers['content-security-policy'];
   },
   /** Callback when an exception is thrown during SSR; decides what to send back to client (500 errors) */
@@ -124,7 +125,6 @@ const config: ProxyConfig & { serverBundle: ServerBundle } = {
     _response: ServerResponse,
     _proxyResponse: IncomingMessage,
     layoutServiceData: any
-    // eslint-disable-next-line @typescript-eslint/ban-types
   ): Promise<object> => {
     // fetches the dictionary from the Sitecore server for the current language so it can be SSR'ed
     // has a default cache applied since dictionary data is quite static and it helps rendering performance a lot

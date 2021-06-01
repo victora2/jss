@@ -18,7 +18,6 @@
     "strict": true,
     "typeRoots": [
       "node_modules/@types",
-      "build"
     ],
     "outDir": "dist",
     "declaration": true,

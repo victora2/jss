@@ -1,4 +1,5 @@
-import express from 'express';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import express, { NextFunction } from 'express';
 import compression from 'compression';
 const scProxy = require('@sitecore-jss/sitecore-jss-proxy').default;
 import config from './config';
@@ -25,9 +26,9 @@ server.use(
  * Output caching, can be enabled,
  * Read about restrictions here: {@link https://jss.sitecore.com/docs/techniques/performance/caching}
  */
-// server.use(cacheMiddleware());
+server.use(cacheMiddleware());
 
-server.use((req, res, next) => {
+server.use((req: any, _res: any, next: NextFunction) => {
   // because this is a proxy, all headers are forwarded on to the Sitecore server
   // but, if we SSR we only understand how to decompress gzip and deflate. Some
   // modern browsers would send 'br' (brotli) as well, and if the Sitecore server
@@ -38,7 +39,7 @@ server.use((req, res, next) => {
   }
 
   next();
-})
+});
 
 // For any other requests, we render app routes server-side and return them
 server.use('*', scProxy(config.serverBundle.renderView, config, config.serverBundle.parseRouteUrl));
