@@ -74,6 +74,8 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   if (process.env.NODE_ENV !== 'development') {
     // Note: Next.js runs export in production mode
     const paths = await sitemapFetcher.fetch(context);
+    console.log('PATH-FROM-GRAPHQL')
+    console.log(paths);
 
     return {
       paths,
