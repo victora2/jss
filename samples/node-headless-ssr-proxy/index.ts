@@ -1,8 +1,8 @@
-const express = require('express');
-const compression = require('compression');
+import express from 'express';
+import compression from 'compression';
 const scProxy = require('@sitecore-jss/sitecore-jss-proxy').default;
-const config = require('./config');
-const cacheMiddleware = require('./cacheMiddleware');
+import config from './config';
+import cacheMiddleware from './cacheMiddleware';
 
 const server = express();
 const port = process.env.PORT || 3000;

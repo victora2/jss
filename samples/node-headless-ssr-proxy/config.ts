@@ -1,7 +1,11 @@
-const fs = require('fs');
-const fetch = require('node-fetch');
-const NodeCache = require('node-cache');
-const httpAgents = require("./httpAgents");
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import fs from 'fs';
+import fetch from 'node-fetch';
+import NodeCache from 'node-cache';
+import httpAgents from './httpAgents';
+import { ServerBundle, ErrorResponse } from './models';
+import { ProxyConfig } from '@sitecore-jss/sitecore-jss-proxy/types/ProxyConfig';
+import { IncomingMessage, ServerResponse } from 'http';
 
 // We keep a cached copy of the site dictionary for performance. Default is 60 seconds.
 const dictionaryCache = new NodeCache({ stdTTL: 60 });
@@ -17,20 +21,17 @@ let appName = process.env.SITECORE_JSS_APP_NAME;
  */
 const bundlePath = process.env.SITECORE_JSS_SERVER_BUNDLE || `./dist/${appName}/server.bundle`;
 
-const serverBundle = require(bundlePath);
+const serverBundle: ServerBundle = require(bundlePath);
 
 httpAgents.setUpDefaultAgents(serverBundle);
 
-const apiHost = process.env.SITECORE_API_HOST || 'http://my.sitecore.host'
+const apiHost = process.env.SITECORE_API_HOST || 'http://my.sitecore.host';
 
 appName = appName || serverBundle.appName;
 
-/**
- * @type {ProxyConfig}
- */
-const config = {
+const config: ProxyConfig & { serverBundle: ServerBundle } = {
   /**
-   * The require'd server.bundle.js file from your pre-built JSS app
+   * The required server.bundle.js file from your pre-built JSS app
    */
   serverBundle,
   /**
@@ -75,7 +76,7 @@ const config = {
    * Writes verbose request info to stdout for debugging.
    * Must be disabled in production for reasonable performance.
    */
-  debug: ((process.env.SITECORE_ENABLE_DEBUG || '').toLowerCase() === 'true') || false,
+  debug: (process.env.SITECORE_ENABLE_DEBUG || '').toLowerCase() === 'true' || false,
   /**
    * Maximum allowed proxy reply size in bytes. Replies larger than this are not sent.
    * Avoids starving the proxy of memory if large requests are proxied.
@@ -92,38 +93,43 @@ const config = {
     // when proxying to a SSL Sitecore instance.
     // This is a major security issue, so NEVER EVER set this to false
     // outside local development. Use a real CA-issued certificate.
-		secure: true,
-		xfwd: true
-	},
-	/**
-	 * Custom headers handling.
-	 * You can remove different headers from proxy response.
-	*/
-	setHeaders: (req, serverRes, proxyRes) => {
-		delete proxyRes.headers['content-security-policy'];
-	},
-  /**
-   * Custom error handling in case our app fails to render.
-   * Return null to pass through server response, or { content, statusCode }
-   * to override server response.
-   *
-   * Note: 404s are not errors, and will have null route data + context sent to the JSS app,
-   * so the app can render a 404 route.
-   */
-  onError: (err, response) => {
-    // http 200 = an error in rendering; http 500 = an error on layout service
-    if (response.statusCode !== 500 && response.statusCode !== 200) return null;
-
-    return {
-      statusCode: 500,
-      content: fs.readFileSync('error.html', 'utf8'),
-    };
+    secure: true,
+    xfwd: true,
   },
-  createViewBag: (request, response, proxyResponse, layoutServiceData) => {
+  /**
+   * Custom headers handling.
+   * You can remove different headers from proxy response.
+   */
+  setHeaders: (
+    _request: IncomingMessage,
+    _response: ServerResponse,
+    proxyResponse: IncomingMessage
+  ) => {
+    delete proxyResponse.headers['content-security-policy'];
+  },
+  /** Callback when an exception is thrown during SSR; decides what to send back to client (500 errors) */
+  onError: (_error: Error, response: IncomingMessage): Promise<ErrorResponse> => {
+    const result: ErrorResponse = {
+      statusCode: response.statusCode,
+    };
+
+    if (result.statusCode === 500 || result.statusCode === 200) {
+      result.content = fs.readFileSync('error.html', 'utf8');
+    }
+
+    return Promise.resolve(result);
+  },
+  createViewBag: (
+    _request: IncomingMessage,
+    _response: ServerResponse,
+    _proxyResponse: IncomingMessage,
+    layoutServiceData: any
+    // eslint-disable-next-line @typescript-eslint/ban-types
+  ): Promise<object> => {
     // fetches the dictionary from the Sitecore server for the current language so it can be SSR'ed
     // has a default cache applied since dictionary data is quite static and it helps rendering performance a lot
     if (!layoutServiceData || !layoutServiceData.sitecore || !layoutServiceData.sitecore.context) {
-      return {};
+      return Promise.resolve({});
     }
 
     // TODO: fallback language should come from app configuration
@@ -132,22 +138,21 @@ const config = {
       layoutServiceData.sitecore.context.site && layoutServiceData.sitecore.context.site.name;
 
     if (!site) {
-      return {};
+      return Promise.resolve({});
     }
 
     const cacheKey = `${site}_${language}`;
 
     const cached = dictionaryCache.get(cacheKey);
 
-    if (cached) return Promise.resolve(cached);
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    if (cached) return Promise.resolve(cached as object);
 
     return fetch(
-      `${config.apiHost}/sitecore/api/jss/dictionary/${appName}/${language}?sc_apikey=${
-        config.apiKey
-      }`,
+      `${config.apiHost}/sitecore/api/jss/dictionary/${appName}/${language}?sc_apikey=${config.apiKey}`,
       {
         headers: {
-          connection: "keep-alive",
+          connection: 'keep-alive',
         },
       }
     )
@@ -163,4 +168,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;
