@@ -93,6 +93,6 @@
     "start:production": "npm-run-all --serial bootstrap next:build next:start",
     "start:watch-components": "ts-node --project tsconfig.scripts.json scripts/generate-component-factory.ts --watch",
     "deploy:versel": "cd ../../ && set DEBUG=ls && npm install && npm i -g typescript && npm install -g ts-node && npm install -g @sitecore-jss/sitecore-jss-cli && npm install --g lerna && lerna clean --yes && npm install --save-exact @sitecore-jss/sitecore-jss-nextjs && ls && npm run bootstrap && ls && npm run build-packages && ls",
-    "deploy:vercel:second:command": "cd samples/nextjs && ls && set DEBUG=jss setup --layoutServiceHost \"https://mykc-xpsingle-single.azurewebsites.net\" --apiKey \"{9D2ECD0F-68F1-461D-B3FB-2EFAFEBCB232}\" --deployUrl \"https://mykc-xpsingle-single.azurewebsites.net/sitecore/api/jss/import\" --deploySecret \"bnueux807kewb80l8wekclpm20e99sjxg3sf8u60mq\" --nonInteractive --skipValidation && ls && jss deploy items --includeContent --includeDictionary && ls && npm run build"
+    "deploy:vercel:second:command": "ls && cd samples/nextjs && ls && set DEBUG=jss setup --layoutServiceHost \"https://mykc-xpsingle-single.azurewebsites.net\" --apiKey \"{9D2ECD0F-68F1-461D-B3FB-2EFAFEBCB232}\" --deployUrl \"https://mykc-xpsingle-single.azurewebsites.net/sitecore/api/jss/import\" --deploySecret \"bnueux807kewb80l8wekclpm20e99sjxg3sf8u60mq\" --nonInteractive --skipValidation && ls && jss deploy items --includeContent --includeDictionary && ls && npm run build"
   }
 }
