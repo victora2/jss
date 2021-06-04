@@ -10,6 +10,7 @@
     ],
     "sitecoreConfigPath": "/App_Config/Include/zzz",
     "graphQLEndpointPath": "/sitecore/api/graph/edge",
+    "trackingEndpointPath": "/api/track",
     "language": "en"
   },
   "engines": {
@@ -59,6 +60,7 @@
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
     "axios": "^0.21.1",
+    "http-proxy-middleware": "^1.2.0",
     "chalk": "~2.4.2",
     "chokidar": "~3.1.1",
     "constant-case": "^3.0.4",

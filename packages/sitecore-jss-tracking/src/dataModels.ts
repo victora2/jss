@@ -33,3 +33,20 @@ export interface PageViewInstance {
   /** URL of page to track - should be absolute route path but can accept any value */
   url: string;
 }
+
+export interface PageViewData {
+  /** URL of page to track - should be absolute route path but can accept any value */
+  url: string;
+
+  /** URL of the page referrer */
+  referrer?: string;
+
+  /** GUID of Sitecore item to track (i.e. context item ID) */
+  itemId?: string;
+
+  /** Language of Sitecore page item */
+  language?: string;
+
+  /** GUID of Sitecore layout device */
+  layoutDeviceId?: string;
+}

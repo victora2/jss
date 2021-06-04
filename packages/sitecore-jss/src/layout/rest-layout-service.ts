@@ -156,8 +156,12 @@ export type DataFetcherResolver = <T>(
  * Uses Axios as the default data fetcher (@see AxiosDataFetcher).
  */
 export class RestLayoutService extends LayoutServiceBase {
+  readonly tracking: boolean;
+
   constructor(private serviceConfig: RestLayoutServiceConfig) {
     super();
+
+    this.tracking = this.serviceConfig.tracking !== false;
   }
 
   /**

@@ -339,6 +339,23 @@ describe('RestLayoutService', () => {
         );
       });
   });
+
+  [
+    [false, false],
+    [true, true],
+    [undefined, true],
+  ].forEach(([inTracking, outTracking]) => {
+    it(`should indicate tracking based on config.tracking property: '${inTracking}'`, () => {
+      const service = new RestLayoutService({
+        apiHost: 'http://sctest',
+        apiKey: '0FBFF61E-267A-43E3-9252-B77E71CEE4BA',
+        siteName: 'supersite',
+        tracking: inTracking,
+      });
+
+      expect(service.tracking).to.equal(outTracking);
+    });
+  });
 });
 
 // note: axios needs to use `withCredentials: true` in order for Sitecore cookies to be included in CORS requests

@@ -5,7 +5,6 @@ import {
   DictionaryPhrases,
   DictionaryService,
   LayoutServiceData,
-  LayoutService,
   editingDataService,
 } from '@sitecore-jss/sitecore-jss-nextjs';
 import { SitecorePageProps } from 'lib/page-props';
@@ -45,12 +44,10 @@ const isServerSidePropsContext = function (
 export class SitecorePagePropsFactory {
   private componentPropsService: ComponentPropsService;
   private dictionaryService: DictionaryService;
-  private layoutService: LayoutService;
 
   constructor() {
     this.componentPropsService = new ComponentPropsService();
     this.dictionaryService = dictionaryServiceFactory.create();
-    this.layoutService = layoutServiceFactory.create();
   }
 
   /**
@@ -65,7 +62,9 @@ export class SitecorePagePropsFactory {
       layoutData: LayoutServiceData | null,
       dictionary: DictionaryPhrases,
       componentProps = {},
-      notFound = false;
+      notFound = false,
+      tracked = false,
+      isPreview = false;
 
     if (context.preview) {
       /**
@@ -81,6 +80,7 @@ export class SitecorePagePropsFactory {
       locale = data.language;
       layoutData = data.layoutData;
       dictionary = data.dictionary;
+      isPreview = true;
     } else {
       /**
        * Normal mode
@@ -92,13 +92,17 @@ export class SitecorePagePropsFactory {
       locale = context.locale ?? packageConfig.language;
 
       // Fetch layout data, passing on req/res for SSR
-      layoutData = await this.layoutService.fetchLayoutData(
+      const isSsrContext = isServerSidePropsContext(context);
+      const layoutService = layoutServiceFactory.create(isSsrContext);
+
+      layoutData = await layoutService.fetchLayoutData(
         path,
         locale,
-        // eslint-disable-next-line prettier/prettier
-        isServerSidePropsContext(context) ? (context as GetServerSidePropsContext).req : undefined,
-        isServerSidePropsContext(context) ? (context as GetServerSidePropsContext).res : undefined
+        isSsrContext ? (context as GetServerSidePropsContext).req : undefined,
+        isSsrContext ? (context as GetServerSidePropsContext).res : undefined
       );
+
+      tracked = layoutService.tracking;
 
       if (!layoutData.sitecore.route) {
         // A missing route value signifies an invalid path, so set notFound.
@@ -134,6 +138,8 @@ export class SitecorePagePropsFactory {
       dictionary,
       componentProps,
       notFound,
+      tracked,
+      isPreview,
     };
   }
 }
