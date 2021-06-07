@@ -1,0 +1,5 @@
+schema: ./build/schema.json
+generates:
+  ./build/schema.d.ts:
+    plugins:
+      - typescript

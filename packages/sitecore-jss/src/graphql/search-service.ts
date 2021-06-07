@@ -1,30 +1,19 @@
 import { GraphQLClient } from '../graphql-request-client';
 import { DocumentNode } from 'graphql';
+import {
+  Query,
+  QuerySearchArgs,
+  ItemSearchPredicateGraphType,
+  ItemSearchResults,
+  Item
+} from '../../build/schema';
 
 /**
  * Schema of data returned in response to a "search" query request
  * @template T The type of objects being requested.
  */
-export type SearchQueryResult<T> = {
-  search: {
-    /**
-     * Data needed to paginate the search results
-     */
-    pageInfo: {
-      /**
-       * string token that can be used to fetch the next page of results
-       */
-      endCursor: string;
-      /**
-       * a value that indicates whether more pages of results are available
-       */
-      hasNext: boolean;
-    };
-    /*
-     * the type of data querying about items matching the search criteria
-     */
-    results: T[];
-  };
+export type SearchQueryResult = {
+  search: ItemSearchResults;
 };
 
 /**
@@ -88,26 +77,27 @@ export class SearchQueryService<T> {
    * 3. Aggregates pagination results into a single result-set.
    * @template T The type of objects being requested.
    * @param {string | DocumentNode} query the search query.
-   * @param {SearchQueryVariables} args search query arguments.
+   * @param {QuerySearchArgs} args search query arguments.
    * @returns {T[]} array of result objects.
    * @throws {RangeError} if a valid root item ID is not provided.
    * @throws {RangeError} if the provided language(s) is(are) not valid.
    */
-  async fetch(query: string | DocumentNode, args: SearchQueryVariables): Promise<T[]> {
+  async fetch(query: string | DocumentNode, args: QuerySearchArgs): Promise<T[]> {
+    /*
     if (!args.rootItemId) {
-      throw new RangeError('"rootItemId" and "language" must be non-empty strings');
+      throw new RangeError('"rootItemId" must be non-empty strings');
     }
 
     if (!args.language) {
-      throw new RangeError('"rootItemId" and "language" must be non-empty strings');
+      throw new RangeError('"language" must be non-empty strings');
     }
-
-    let results: T[] = [];
+*/
+    let results: Item[] = [];
     let hasNext = true;
     let after = '';
 
     while (hasNext) {
-      const fetchResponse = await this.client.request<SearchQueryResult<T>>(query, {
+      const fetchResponse = await this.client.request<{ search: ItemSearchResults }>(query, {
         ...args,
         after,
       });

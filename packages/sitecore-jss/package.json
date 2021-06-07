@@ -8,7 +8,8 @@
     "lint": "eslint ./src/**/*.ts",
     "test": "mocha --require ts-node/register \"./src/**/*.test.ts\"",
     "prepublishOnly": "npm run build",
-    "coverage": "nyc --require ts-node/register npm test"
+    "coverage": "nyc --require ts-node/register npm test",
+    "graphql:update": "ts-node ./build/fetch-graphql-introspection-data.ts"
   },
   "engines": {
     "node": ">=8.1"
@@ -27,6 +28,8 @@
     "url": "https://github.com/sitecore/jss/issues"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.21.5",
+    "@graphql-codegen/typescript": "^1.22.1",
     "@types/chai": "^4.2.3",
     "@types/chai-spies": "^1.0.3",
     "@types/chai-string": "^1.4.2",
