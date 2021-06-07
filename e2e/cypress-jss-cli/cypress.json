@@ -2,8 +2,8 @@
     "baseUrl": "https://cm.jssdev",
     "env": {
         "FRAMEWORK": "nextjs",
-        "USERNAME": "adminn",
-        "PASSWORD": "bb",
+        "USERNAME": "admin",
+        "PASSWORD": "b",
         "INSTANCE_PATH": "C:\\Sitecore\\sitecore-jss-dev\\docker\\deploy\\platform",
         "APIKEY": "",
         "SAMPLEAPPRELPATH": "..\\..\\samples"

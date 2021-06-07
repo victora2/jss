@@ -2,6 +2,7 @@ const Common = require('../support/common');
 
 describe('Jss Deploy', function() {
   it('Should deploy nextjs app', function() {
+    cy.log(Cypress.env('INSTANCE_PATH'));
     var secret = require('crypto')
       .randomBytes(48)
       .toString('hex');
@@ -19,10 +20,20 @@ describe('Jss Deploy', function() {
       samplesDirAppName: 'nextjs',
       includeContent: true,
       includeDictionary: true,
+      acceptCertificate: 'test',
+      options: { timeout: 90000, failOnNonZeroExit: false },
+    }).then((cert) => {
+      Common.Common.deployApp({
+        samplesDirAppName: 'nextjs',
+        includeContent: true,
+        includeDictionary: true,
+        acceptCertificate: cert,
+        options: { timeout: 160000, failOnNonZeroExit: true },
+      });
     });
   });
 
-  it('Should deploy react app', function() {
+  xit('Should deploy react app', function() {
     cy.log(Cypress.env('INSTANCE_PATH'));
     var secret = require('crypto')
       .randomBytes(48)
