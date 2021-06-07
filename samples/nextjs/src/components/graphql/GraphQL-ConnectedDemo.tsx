@@ -14,7 +14,7 @@ import {
   AppRoute,
   Item,
   GraphQlConnectedDemo as GrapQLConnectedDemoDatasource,
-} from './GraphQL-ConnectedDemo.graphql';
+} from 'generated-graphql';
 import { StyleguideComponentProps } from 'lib/component-props';
 import config from 'temp/config';
 
