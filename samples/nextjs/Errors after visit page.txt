@@ -1,0 +1,93 @@
+[GET] /
+14:02:26:22
+Loaded env from .env
+2021-06-07T11:02:26.408Z	418d0c90-70bd-49a7-8a3b-e82309ba5b6e	ERROR	Unhandled error during request: Error: Cannot find module 'react'
+Require stack:
+- /var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js
+- /var/task/samples/nextjs/.next/serverless/pages/[[...path]].js
+- /var/task/samples/nextjs/___next_launcher.js
+- /var/runtime/UserFunction.js
+- /var/runtime/index.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:730:27)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js:1:106)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Module.load (internal/modules/cjs/loader.js:933:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:774:14)
+    at Module.require (internal/modules/cjs/loader.js:957:19) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js',
+    '/var/task/samples/nextjs/.next/serverless/pages/[[...path]].js',
+    '/var/task/samples/nextjs/___next_launcher.js',
+    '/var/runtime/UserFunction.js',
+    '/var/runtime/index.js'
+  ]
+}
+2021-06-07T11:02:26.408Z	418d0c90-70bd-49a7-8a3b-e82309ba5b6e	ERROR	Uncaught Exception 	{"errorType":"Error","errorMessage":"Cannot find module 'react'\nRequire stack:\n- /var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js\n- /var/task/samples/nextjs/.next/serverless/pages/[[...path]].js\n- /var/task/samples/nextjs/___next_launcher.js\n- /var/runtime/UserFunction.js\n- /var/runtime/index.js","code":"MODULE_NOT_FOUND","requireStack":["/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js","/var/task/samples/nextjs/.next/serverless/pages/[[...path]].js","/var/task/samples/nextjs/___next_launcher.js","/var/runtime/UserFunction.js","/var/runtime/index.js"],"stack":["Error: Cannot find module 'react'","Require stack:","- /var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js","- /var/task/samples/nextjs/.next/serverless/pages/[[...path]].js","- /var/task/samples/nextjs/___next_launcher.js","- /var/runtime/UserFunction.js","- /var/runtime/index.js","    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)","    at Function.Module._load (internal/modules/cjs/loader.js:730:27)","    at Module.require (internal/modules/cjs/loader.js:957:19)","    at require (internal/modules/cjs/helpers.js:88:18)","    at Object.<anonymous> (/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js:1:106)","    at Module._compile (internal/modules/cjs/loader.js:1068:30)","    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)","    at Module.load (internal/modules/cjs/loader.js:933:32)","    at Function.Module._load (internal/modules/cjs/loader.js:774:14)","    at Module.require (internal/modules/cjs/loader.js:957:19)"]}
+Unknown application error occurred
+[GET] /
+14:02:26:22
+Loaded env from .env
+2021-06-07T11:02:26.404Z	04809e64-f7aa-4ed9-ac4c-bfd911b7f66f	ERROR	Unhandled error during request: Error: Cannot find module 'react'
+Require stack:
+- /var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js
+- /var/task/samples/nextjs/.next/serverless/pages/[[...path]].js
+- /var/task/samples/nextjs/___next_launcher.js
+- /var/runtime/UserFunction.js
+- /var/runtime/index.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:730:27)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js:1:106)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Module.load (internal/modules/cjs/loader.js:933:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:774:14)
+    at Module.require (internal/modules/cjs/loader.js:957:19) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js',
+    '/var/task/samples/nextjs/.next/serverless/pages/[[...path]].js',
+    '/var/task/samples/nextjs/___next_launcher.js',
+    '/var/runtime/UserFunction.js',
+    '/var/runtime/index.js'
+  ]
+}
+2021-06-07T11:02:26.404Z	04809e64-f7aa-4ed9-ac4c-bfd911b7f66f	ERROR	Uncaught Exception 	{"errorType":"Error","errorMessage":"Cannot find module 'react'\nRequire stack:\n- /var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js\n- /var/task/samples/nextjs/.next/serverless/pages/[[...path]].js\n- /var/task/samples/nextjs/___next_launcher.js\n- /var/runtime/UserFunction.js\n- /var/runtime/index.js","code":"MODULE_NOT_FOUND","requireStack":["/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js","/var/task/samples/nextjs/.next/serverless/pages/[[...path]].js","/var/task/samples/nextjs/___next_launcher.js","/var/runtime/UserFunction.js","/var/runtime/index.js"],"stack":["Error: Cannot find module 'react'","Require stack:","- /var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js","- /var/task/samples/nextjs/.next/serverless/pages/[[...path]].js","- /var/task/samples/nextjs/___next_launcher.js","- /var/runtime/UserFunction.js","- /var/runtime/index.js","    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)","    at Function.Module._load (internal/modules/cjs/loader.js:730:27)","    at Module.require (internal/modules/cjs/loader.js:957:19)","    at require (internal/modules/cjs/helpers.js:88:18)","    at Object.<anonymous> (/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js:1:106)","    at Module._compile (internal/modules/cjs/loader.js:1068:30)","    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)","    at Module.load (internal/modules/cjs/loader.js:933:32)","    at Function.Module._load (internal/modules/cjs/loader.js:774:14)","    at Module.require (internal/modules/cjs/loader.js:957:19)"]}
+Unknown application error occurred
+[GET] /
+14:02:26:03
+Loaded env from .env
+2021-06-07T11:02:26.410Z	c55d791d-5ff5-4e4c-8d13-70bebd92a411	ERROR	Unhandled error during request: Error: Cannot find module 'react'
+Require stack:
+- /var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js
+- /var/task/samples/nextjs/.next/serverless/pages/[[...path]].js
+- /var/task/samples/nextjs/___next_launcher.js
+- /var/runtime/UserFunction.js
+- /var/runtime/index.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:730:27)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js:1:106)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Module.load (internal/modules/cjs/loader.js:933:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:774:14)
+    at Module.require (internal/modules/cjs/loader.js:957:19) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js',
+    '/var/task/samples/nextjs/.next/serverless/pages/[[...path]].js',
+    '/var/task/samples/nextjs/___next_launcher.js',
+    '/var/runtime/UserFunction.js',
+    '/var/runtime/index.js'
+  ]
+}
+2021-06-07T11:02:26.411Z	c55d791d-5ff5-4e4c-8d13-70bebd92a411	ERROR	Uncaught Exception 	{"errorType":"Error","errorMessage":"Cannot find module 'react'\nRequire stack:\n- /var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js\n- /var/task/samples/nextjs/.next/serverless/pages/[[...path]].js\n- /var/task/samples/nextjs/___next_launcher.js\n- /var/runtime/UserFunction.js\n- /var/runtime/index.js","code":"MODULE_NOT_FOUND","requireStack":["/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js","/var/task/samples/nextjs/.next/serverless/pages/[[...path]].js","/var/task/samples/nextjs/___next_launcher.js","/var/runtime/UserFunction.js","/var/runtime/index.js"],"stack":["Error: Cannot find module 'react'","Require stack:","- /var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js","- /var/task/samples/nextjs/.next/serverless/pages/[[...path]].js","- /var/task/samples/nextjs/___next_launcher.js","- /var/runtime/UserFunction.js","- /var/runtime/index.js","    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)","    at Function.Module._load (internal/modules/cjs/loader.js:730:27)","    at Module.require (internal/modules/cjs/loader.js:957:19)","    at require (internal/modules/cjs/helpers.js:88:18)","    at Object.<anonymous> (/var/task/samples/nextjs/node_modules/next/dist/next-server/server/render.js:1:106)","    at Module._compile (internal/modules/cjs/loader.js:1068:30)","    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)","    at Module.load (internal/modules/cjs/loader.js:933:32)","    at Function.Module._load (internal/modules/cjs/loader.js:774:14)","    at Module.require (internal/modules/cjs/loader.js:957:19)"]}
+Unknown application error occurred

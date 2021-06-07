@@ -1,0 +1,500 @@
+Build Logs
+13:54:06.887  	Cloning github.com/Sitecore/jss (Branch: feature/deploy-to-vercel-third-part, Commit: a75abb7)
+13:54:08.066  	Cloning completed: 1.178s
+13:54:08.285  	Analyzing source code...
+13:54:09.266  	Installing build runtime...
+13:54:12.379  	Build runtime installed: 3.113s
+13:54:15.627  	No Build Cache available
+13:54:16.705  	Warning: Due to "engines": { "node": ">=8.1" } in your `package.json` file, the Node.js Version defined in your Project Settings ("14.x") will not apply. Learn More: http://vercel.link/node-version
+13:54:16.712  	Installing dependencies...
+13:54:18.363  	npm WARN deprecated joi@14.3.1: This module has moved and is now available at @hapi/joi. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+13:54:18.499  	npm WARN deprecated hoek@6.1.3: This module has moved and is now available at @hapi/hoek. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+13:54:18.533  	npm WARN deprecated topo@3.0.3: This module has moved and is now available at @hapi/topo. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+13:54:40.211  	> bufferutil@4.0.2 install /vercel/path0/samples/nextjs/node_modules/bufferutil
+13:54:40.211  	> node-gyp-build
+13:54:40.528  	> utf-8-validate@5.0.3 install /vercel/path0/samples/nextjs/node_modules/utf-8-validate
+13:54:40.528  	> node-gyp-build
+13:54:40.695  	> sharp@0.26.2 install /vercel/path0/samples/nextjs/node_modules/sharp
+13:54:40.695  	> (node install/libvips && node install/dll-copy && prebuild-install) || (node-gyp rebuild && node install/dll-copy)
+13:54:40.858  	info sharp Downloading https://github.com/lovell/sharp-libvips/releases/download/v8.10.0/libvips-8.10.0-linux-x64.tar.br
+13:54:42.506  	> @ampproject/toolbox-optimizer@2.7.0-alpha.1 postinstall /vercel/path0/samples/nextjs/node_modules/@ampproject/toolbox-optimizer
+13:54:42.506  	> node lib/warmup.js
+13:54:42.841  	Browserslist: caniuse-lite is outdated. Please run:
+13:54:42.841  	npx browserslist@latest --update-db
+13:54:43.011  	AMP OPTIMIZER Downloaded latest AMP runtime data.
+13:54:44.101  	npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.1 (node_modules/@sitecore-jss/sitecore-jss-dev-tools/node_modules/chokidar/node_modules/fsevents):
+13:54:44.101  	npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+13:54:44.108  	npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/watchpack-chokidar2/node_modules/fsevents):
+13:54:44.108  	npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+13:54:44.116  	npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+13:54:44.118  	npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+13:54:44.123  	added 1776 packages from 893 contributors in 26.983s
+13:54:44.870  	109 packages are looking for funding
+13:54:44.870  	  run `npm fund` for details
+13:54:44.917  	Detected Next.js version: 10.0.3
+13:54:45.101  	Running "npm run deploy:versel && npm run deploy:vercel:second:command"
+13:54:45.307  	> jss-sample-nextjs@16.1.0-canary.44 deploy:versel /vercel/path0/samples/nextjs
+13:54:45.307  	> cd ../../ && set DEBUG=ls && npm install && npm i -g typescript && npm install -g ts-node && npm install -g @sitecore-jss/sitecore-jss-cli && npm install --g lerna && lerna clean --yes && ls && npm run bootstrap && ls && npm run build-packages && ls
+13:54:56.744  	npm WARN path0 No repository field.
+13:54:56.747  	added 1010 packages from 446 contributors and audited 1010 packages in 11.012s
+13:54:57.102  	46 packages are looking for funding
+13:54:57.102  	  run `npm fund` for details
+13:54:57.103  	found 0 vulnerabilities
+13:54:58.554  	/node14/bin/tsc -> /node14/lib/node_modules/typescript/bin/tsc
+13:54:58.556  	/node14/bin/tsserver -> /node14/lib/node_modules/typescript/bin/tsserver
+13:54:58.557  	+ typescript@4.3.2
+13:54:58.557  	added 1 package from 1 contributor in 1.066s
+13:54:59.539  	/node14/bin/ts-node -> /node14/lib/node_modules/ts-node/dist/bin.js
+13:54:59.539  	/node14/bin/ts-script -> /node14/lib/node_modules/ts-node/dist/bin-script-deprecated.js
+13:54:59.539  	/node14/bin/ts-node-script -> /node14/lib/node_modules/ts-node/dist/bin-script.js
+13:54:59.539  	/node14/bin/ts-node-cwd -> /node14/lib/node_modules/ts-node/dist/bin-cwd.js
+13:54:59.539  	/node14/bin/ts-node-transpile-only -> /node14/lib/node_modules/ts-node/dist/bin-transpile.js
+13:54:59.551  	npm WARN ts-node@10.0.0 requires a peer of @types/node@* but none is installed. You must install peer dependencies yourself.
+13:54:59.557  	npm WARN ts-node@10.0.0 requires a peer of typescript@>=2.7 but none is installed. You must install peer dependencies yourself.
+13:54:59.558  	+ ts-node@10.0.0
+13:54:59.558  	added 13 packages from 44 contributors in 0.567s
+13:55:02.773  	npm WARN deprecated joi@14.3.1: This module has moved and is now available at @hapi/joi. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+13:55:02.804  	npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+13:55:03.957  	npm WARN deprecated topo@3.0.3: This module has moved and is now available at @hapi/topo. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+13:55:03.959  	npm WARN deprecated hoek@6.1.3: This module has moved and is now available at @hapi/hoek. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+13:55:07.642  	/node14/bin/jss -> /node14/lib/node_modules/@sitecore-jss/sitecore-jss-cli/dist/bin/jss.js
+13:55:07.689  	npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.3.1 (node_modules/@sitecore-jss/sitecore-jss-cli/node_modules/chokidar/node_modules/fsevents):
+13:55:07.689  	npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+13:55:07.695  	npm WARN ts-node@8.10.2 requires a peer of typescript@>=2.7 but none is installed. You must install peer dependencies yourself.
+13:55:07.696  	+ @sitecore-jss/sitecore-jss-cli@16.0.0
+13:55:07.696  	added 208 packages from 216 contributors in 7.721s
+13:55:12.218  	npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+13:55:12.348  	npm WARN deprecated har-validator@5.1.5: this library is no longer supported
+13:55:12.391  	npm WARN deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+13:55:25.633  	/node14/bin/lerna -> /node14/lib/node_modules/lerna/cli.js
+13:55:25.805  	+ lerna@4.0.0
+13:55:25.805  	added 690 packages from 316 contributors in 17.658s
+13:55:26.302  	info cli using local version of lerna
+13:55:26.306  	lerna notice cli v3.22.1
+13:55:26.308  	lerna info ci enabled
+13:55:26.394  	lerna info clean removing /vercel/path0/packages/sitecore-jss-angular-schematics/node_modules
+13:55:26.395  	lerna info clean removing /vercel/path0/packages/sitecore-jss-angular/node_modules
+13:55:26.395  	lerna info clean removing /vercel/path0/packages/sitecore-jss-cli/node_modules
+13:55:26.395  	lerna info clean removing /vercel/path0/packages/sitecore-jss-dev-tools/node_modules
+13:55:26.398  	lerna info clean removing /vercel/path0/packages/sitecore-jss-forms/node_modules
+13:55:26.398  	lerna info clean removing /vercel/path0/packages/sitecore-jss-manifest/node_modules
+13:55:26.398  	lerna info clean removing /vercel/path0/packages/sitecore-jss-nextjs/node_modules
+13:55:26.399  	lerna info clean removing /vercel/path0/packages/sitecore-jss-proxy/node_modules
+13:55:26.399  	lerna info clean removing /vercel/path0/packages/sitecore-jss-react-forms/node_modules
+13:55:26.399  	lerna info clean removing /vercel/path0/packages/sitecore-jss-react-native/node_modules
+13:55:26.399  	lerna info clean removing /vercel/path0/packages/sitecore-jss-react/node_modules
+13:55:26.399  	lerna info clean removing /vercel/path0/packages/sitecore-jss-rendering-host/node_modules
+13:55:26.399  	lerna info clean removing /vercel/path0/packages/sitecore-jss-tracking/node_modules
+13:55:26.399  	lerna info clean removing /vercel/path0/packages/sitecore-jss-update-package/node_modules
+13:55:26.399  	lerna info clean removing /vercel/path0/packages/sitecore-jss-vue/node_modules
+13:55:26.400  	lerna info clean removing /vercel/path0/packages/sitecore-jss/node_modules
+13:55:26.400  	lerna info clean removing /vercel/path0/packages/sitecore-pipelines/node_modules
+13:55:26.400  	lerna info clean removing /vercel/path0/samples/angular/node_modules
+13:55:26.400  	lerna info clean removing /vercel/path0/samples/nextjs/node_modules
+13:55:26.400  	lerna info clean removing /vercel/path0/samples/node-headless-ssr-experience-edge/node_modules
+13:55:26.400  	lerna info clean removing /vercel/path0/samples/node-headless-ssr-proxy/node_modules
+13:55:26.400  	lerna info clean removing /vercel/path0/samples/react-native/node_modules
+13:55:26.408  	lerna info clean removing /vercel/path0/samples/react/node_modules
+13:55:26.408  	lerna info clean removing /vercel/path0/samples/sitecore-embedded-jss-app/node_modules
+13:55:26.408  	lerna info clean removing /vercel/path0/samples/sitecore-javascript-renderings/node_modules
+13:55:26.408  	lerna info clean removing /vercel/path0/samples/vue/node_modules
+13:55:27.667  	lerna success clean finished
+13:55:27.678  	azure-pipelines.yml
+13:55:27.678  	CODE_OF_CONDUCT.md
+13:55:27.678  	CONTRIBUTING.md
+13:55:27.678  	docs
+13:55:27.678  	e2e
+13:55:27.678  	lerna.json
+13:55:27.678  	LICENSE.MD
+13:55:27.678  	node_modules
+13:55:27.678  	package.json
+13:55:27.678  	package-lock.json
+13:55:27.678  	packages
+13:55:27.678  	README.md
+13:55:27.678  	rn-cli.config.js
+13:55:27.678  	samples
+13:55:27.678  	SUPPORT.md
+13:55:27.878  	> @ bootstrap /vercel/path0
+13:55:27.878  	> lerna bootstrap && npm run bootstrap-react && npm run bootstrap-react-dom
+13:55:28.230  	lerna notice cli v3.22.1
+13:55:28.233  	lerna info ci enabled
+13:55:28.496  	lerna info Bootstrapping 26 packages
+13:55:28.593  	lerna info Installing external dependencies
+13:57:40.629  	lerna info Symlinking packages and binaries
+13:57:40.788  	lerna success Bootstrapped 26 packages
+13:57:41.006  	> @ bootstrap-react /vercel/path0
+13:57:41.006  	> cd ./packages/sitecore-jss-react/node_modules/react && npm link && cd ../../../sitecore-jss-nextjs && npm link react && npm link react && cd ../../samples/nextjs && npm link react && cd ../react && npm link react
+13:57:42.475  	npm notice created a lockfile as package-lock.json. You should commit this file.
+13:57:42.534  	added 3 packages from 3 contributors and audited 3 packages in 0.312s
+13:57:42.537  	found 0 vulnerabilities
+13:57:42.556  	/node14/lib/node_modules/react -> /vercel/path0/packages/sitecore-jss-react/node_modules/react
+13:57:42.793  	/vercel/path0/packages/sitecore-jss-nextjs/node_modules/react -> /node14/lib/node_modules/react -> /vercel/path0/packages/sitecore-jss-react/node_modules/react
+13:57:43.025  	/vercel/path0/packages/sitecore-jss-nextjs/node_modules/react -> /node14/lib/node_modules/react -> /vercel/path0/packages/sitecore-jss-react/node_modules/react
+13:57:43.257  	/vercel/path0/samples/nextjs/node_modules/react -> /node14/lib/node_modules/react -> /vercel/path0/packages/sitecore-jss-react/node_modules/react
+13:57:43.488  	/vercel/path0/samples/react/node_modules/react -> /node14/lib/node_modules/react -> /vercel/path0/packages/sitecore-jss-react/node_modules/react
+13:57:43.708  	> @ bootstrap-react-dom /vercel/path0
+13:57:43.708  	> cd ./packages/sitecore-jss-react/node_modules/react-dom && npm link && cd ../../../sitecore-jss-nextjs && npm link react-dom && cd ../../samples/nextjs && npm link react-dom && cd ../react && npm link react-dom
+13:57:44.339  	npm notice created a lockfile as package-lock.json. You should commit this file.
+13:57:44.346  	npm WARN react-dom@17.0.1 requires a peer of react@17.0.1 but none is installed. You must install peer dependencies yourself.
+13:57:44.381  	added 3 packages from 3 contributors and audited 4 packages in 0.279s
+13:57:44.385  	found 0 vulnerabilities
+13:57:44.398  	/node14/lib/node_modules/react-dom -> /vercel/path0/packages/sitecore-jss-react/node_modules/react-dom
+13:57:44.649  	/vercel/path0/packages/sitecore-jss-nextjs/node_modules/react-dom -> /node14/lib/node_modules/react-dom -> /vercel/path0/packages/sitecore-jss-react/node_modules/react-dom
+13:57:44.876  	/vercel/path0/samples/nextjs/node_modules/react-dom -> /node14/lib/node_modules/react-dom -> /vercel/path0/packages/sitecore-jss-react/node_modules/react-dom
+13:57:45.111  	/vercel/path0/samples/react/node_modules/react-dom -> /node14/lib/node_modules/react-dom -> /vercel/path0/packages/sitecore-jss-react/node_modules/react-dom
+13:57:45.124  	azure-pipelines.yml
+13:57:45.124  	CODE_OF_CONDUCT.md
+13:57:45.124  	CONTRIBUTING.md
+13:57:45.124  	docs
+13:57:45.124  	e2e
+13:57:45.124  	lerna.json
+13:57:45.124  	LICENSE.MD
+13:57:45.124  	node_modules
+13:57:45.124  	package.json
+13:57:45.124  	package-lock.json
+13:57:45.124  	packages
+13:57:45.125  	README.md
+13:57:45.125  	rn-cli.config.js
+13:57:45.125  	samples
+13:57:45.125  	SUPPORT.md
+13:57:45.330  	> @ build-packages /vercel/path0
+13:57:45.330  	> lerna run build --ignore *-sample*
+13:57:45.686  	lerna notice cli v3.22.1
+13:57:45.689  	lerna info ci enabled
+13:57:45.784  	lerna notice filter excluding "*-sample*"
+13:57:45.784  	lerna info filter [ '!*-sample*' ]
+13:57:45.786  	lerna info Executing command in 17 packages: "npm run build"
+13:57:50.356  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-angular-schematics' in 4.5s:
+13:57:50.358  	> @sitecore-jss/sitecore-jss-angular-schematics@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-angular-schematics
+13:57:50.358  	> tsc -p tsconfig.json
+13:57:53.970  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-proxy' in 8.1s:
+13:57:53.970  	> @sitecore-jss/sitecore-jss-proxy@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-proxy
+13:57:53.971  	> npm run clean && tsc
+13:57:53.971  	> @sitecore-jss/sitecore-jss-proxy@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-proxy
+13:57:53.971  	> del-cli dist types
+13:57:53.992  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-update-package' in 8.2s:
+13:57:53.992  	> @sitecore-jss/sitecore-jss-update-package@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-update-package
+13:57:53.992  	> npm run clean && tsc
+13:57:53.993  	> @sitecore-jss/sitecore-jss-update-package@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-update-package
+13:57:53.993  	> del-cli dist types
+13:57:55.126  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-rendering-host' in 9.3s:
+13:57:55.127  	> @sitecore-jss/sitecore-jss-rendering-host@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-rendering-host
+13:57:55.127  	> npm run clean && tsc
+13:57:55.127  	> @sitecore-jss/sitecore-jss-rendering-host@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-rendering-host
+13:57:55.127  	> del-cli dist types
+13:57:59.348  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss' in 9.0s:
+13:57:59.349  	> @sitecore-jss/sitecore-jss@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss
+13:57:59.349  	> npm run clean && tsc
+13:57:59.349  	> @sitecore-jss/sitecore-jss@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss
+13:57:59.349  	> del-cli dist types
+13:57:59.787  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-pipelines' in 5.8s:
+13:57:59.788  	> @sitecore-jss/sitecore-pipelines@16.1.0-canary.44 build /vercel/path0/packages/sitecore-pipelines
+13:57:59.788  	> npm run clean && tsc
+13:57:59.788  	> @sitecore-jss/sitecore-pipelines@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-pipelines
+13:57:59.788  	> del-cli dist types
+13:58:08.238  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-forms' in 8.9s:
+13:58:08.239  	> @sitecore-jss/sitecore-jss-forms@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-forms
+13:58:08.239  	> npm run clean && tsc
+13:58:08.239  	> @sitecore-jss/sitecore-jss-forms@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-forms
+13:58:08.240  	> del-cli dist types
+13:58:15.398  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-react' in 15.6s:
+13:58:15.398  	> @sitecore-jss/sitecore-jss-react@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-react
+13:58:15.398  	> npm run clean && tsc
+13:58:15.399  	> @sitecore-jss/sitecore-jss-react@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-react
+13:58:15.399  	> del-cli dist types
+13:58:16.376  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-angular' in 17.0s:
+13:58:16.377  	> @sitecore-jss/sitecore-jss-angular@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-angular
+13:58:16.377  	> ng-packagr -p ng-package.json
+13:58:16.377  	Building Angular Package
+13:58:16.377  	------------------------------------------------------------------------------
+13:58:16.377  	Building entry point '@sitecore-jss/sitecore-jss-angular'
+13:58:16.377  	------------------------------------------------------------------------------
+13:58:16.378  	------------------------------------------------------------------------------
+13:58:16.378  	Built Angular Package
+13:58:16.378  	 - from: /vercel/path0/packages/sitecore-jss-angular
+13:58:16.378  	 - to:   /vercel/path0/packages/sitecore-jss-angular/dist
+13:58:16.378  	------------------------------------------------------------------------------
+13:58:18.484  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-tracking' in 10.2s:
+13:58:18.485  	> @sitecore-jss/sitecore-jss-tracking@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-tracking
+13:58:18.485  	> npm run clean && tsc
+13:58:18.487  	> @sitecore-jss/sitecore-jss-tracking@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-tracking
+13:58:18.492  	> del-cli dist types
+13:58:18.906  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-react-native' in 19.5s:
+13:58:18.906  	> @sitecore-jss/sitecore-jss-react-native@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-react-native
+13:58:18.907  	> npm run clean && npm run typecheck && babel src --out-dir dist --extensions ".ts,.tsx" --ignore "*.test.ts,*.test.js,testData,tests,__snapshots__"
+13:58:18.907  	> @sitecore-jss/sitecore-jss-react-native@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-react-native
+13:58:18.907  	> del-cli dist types
+13:58:18.907  	> @sitecore-jss/sitecore-jss-react-native@16.1.0-canary.44 typecheck /vercel/path0/packages/sitecore-jss-react-native
+13:58:18.907  	> tsc
+13:58:18.907  	Successfully compiled 20 files with Babel.
+13:58:24.633  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-manifest' in 8.3s:
+13:58:24.634  	> @sitecore-jss/sitecore-jss-manifest@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-manifest
+13:58:24.634  	> npm run clean && tsc
+13:58:24.634  	> @sitecore-jss/sitecore-jss-manifest@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-manifest
+13:58:24.634  	> del-cli dist types
+13:58:29.390  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-vue' in 14.0s:
+13:58:29.391  	> @sitecore-jss/sitecore-jss-vue@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-vue
+13:58:29.391  	> npm run clean && tsc
+13:58:29.391  	> @sitecore-jss/sitecore-jss-vue@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-vue
+13:58:29.391  	> del-cli dist types
+13:58:32.248  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-react-forms' in 13.8s:
+13:58:32.249  	> @sitecore-jss/sitecore-jss-react-forms@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-react-forms
+13:58:32.249  	> npm run clean && tsc
+13:58:32.250  	> @sitecore-jss/sitecore-jss-react-forms@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-react-forms
+13:58:32.250  	> del-cli dist types
+13:58:33.425  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-dev-tools' in 8.8s:
+13:58:33.425  	> @sitecore-jss/sitecore-jss-dev-tools@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-dev-tools
+13:58:33.425  	> npm run clean && tsc
+13:58:33.426  	> @sitecore-jss/sitecore-jss-dev-tools@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-dev-tools
+13:58:33.426  	> del-cli dist types
+13:58:35.297  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-nextjs' in 10.7s:
+13:58:35.297  	> @sitecore-jss/sitecore-jss-nextjs@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-nextjs
+13:58:35.297  	> npm run clean && tsc -p tsconfig.json && tsc -p tsconfig-esm.json
+13:58:35.297  	> @sitecore-jss/sitecore-jss-nextjs@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-nextjs
+13:58:35.297  	> del-cli dist types
+13:58:38.242  	lerna info run Ran npm script 'build' in '@sitecore-jss/sitecore-jss-cli' in 4.8s:
+13:58:38.242  	> @sitecore-jss/sitecore-jss-cli@16.1.0-canary.44 build /vercel/path0/packages/sitecore-jss-cli
+13:58:38.242  	> npm run clean && tsc
+13:58:38.242  	> @sitecore-jss/sitecore-jss-cli@16.1.0-canary.44 clean /vercel/path0/packages/sitecore-jss-cli
+13:58:38.242  	> del-cli dist types
+13:58:38.243  	lerna success run Ran npm script 'build' in 17 packages in 52.5s:
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-angular-schematics
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-angular
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-cli
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-dev-tools
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-forms
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-manifest
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-nextjs
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-proxy
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-react-forms
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-react-native
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-react
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-rendering-host
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-tracking
+13:58:38.243  	lerna success - @sitecore-jss/sitecore-jss-update-package
+13:58:38.244  	lerna success - @sitecore-jss/sitecore-jss-vue
+13:58:38.244  	lerna success - @sitecore-jss/sitecore-jss
+13:58:38.244  	lerna success - @sitecore-jss/sitecore-pipelines
+13:58:38.251  	azure-pipelines.yml
+13:58:38.251  	CODE_OF_CONDUCT.md
+13:58:38.253  	CONTRIBUTING.md
+13:58:38.253  	docs
+13:58:38.253  	e2e
+13:58:38.253  	lerna.json
+13:58:38.253  	LICENSE.MD
+13:58:38.253  	node_modules
+13:58:38.253  	package.json
+13:58:38.253  	package-lock.json
+13:58:38.253  	packages
+13:58:38.253  	README.md
+13:58:38.253  	rn-cli.config.js
+13:58:38.253  	samples
+13:58:38.253  	SUPPORT.md
+13:58:38.459  	> jss-sample-nextjs@16.1.0-canary.44 deploy:vercel:second:command /vercel/path0/samples/nextjs
+13:58:38.459  	> ls && jss setup --layoutServiceHost "https://mykc-xpsingle-single.azurewebsites.net" --apiKey "{9D2ECD0F-68F1-461D-B3FB-2EFAFEBCB232}" --deployUrl "https://mykc-xpsingle-single.azurewebsites.net/sitecore/api/jss/import" --deploySecret "bnueux807kewb80l8wekclpm20e99sjxg3sf8u60mq" --nonInteractive --skipValidation && ls && jss deploy items --includeContent --includeDictionary && ls && npm run build
+13:58:38.465  	data
+13:58:38.465  	jss-create.js
+13:58:38.465  	LICENSE.txt
+13:58:38.465  	next.config.js
+13:58:38.465  	next.config.__vercel_builder_backup__.js
+13:58:38.465  	next-env.d.ts
+13:58:38.465  	node_modules
+13:58:38.465  	package.json
+13:58:38.465  	package-lock.json
+13:58:38.465  	public
+13:58:38.465  	README.md
+13:58:38.465  	scripts
+13:58:38.465  	sitecore
+13:58:38.465  	src
+13:58:38.465  	tsconfig.json
+13:58:38.465  	tsconfig.scripts.json
+13:58:38.860  	Deploy secret Sitecore config written to /vercel/path0/samples/nextjs/sitecore/config/JssNextWeb.deploysecret.config
+13:58:38.861  	Ensure this configuration is deployed to Sitecore.
+13:58:38.861  	JSS connection settings saved to /vercel/path0/samples/nextjs/scjssconfig.json
+13:58:38.861  	NEXT STEPS
+13:58:38.861  	* Ensure the hostName in /sitecore/config/*.config is configured as mykc-xpsingle-single.azurewebsites.net, and in hosts file if needed.
+13:58:38.861  	* Deploy the app's items (i.e. jss deploy items -c -d)
+13:58:38.861  	* Create a production build (i.e. jss build)
+13:58:38.861  	* Copy the build artifacts to the Sitecore instance in the sitecoreDistPath set in package.json.
+13:58:38.861  	* Test your app in integrated mode by visiting https://mykc-xpsingle-single.azurewebsites.net
+13:58:38.862  	  > Note: jss deploy config, jss deploy files, and jss deploy app cannot be used with remote Sitecore.
+13:58:38.880  	data
+13:58:38.880  	jss-create.js
+13:58:38.880  	LICENSE.txt
+13:58:38.880  	next.config.js
+13:58:38.880  	next.config.__vercel_builder_backup__.js
+13:58:38.881  	next-env.d.ts
+13:58:38.881  	node_modules
+13:58:38.881  	package.json
+13:58:38.881  	package-lock.json
+13:58:38.881  	public
+13:58:38.881  	README.md
+13:58:38.881  	scjssconfig.json
+13:58:38.881  	scripts
+13:58:38.881  	sitecore
+13:58:38.881  	src
+13:58:38.881  	tsconfig.json
+13:58:38.881  	tsconfig.scripts.json
+13:58:39.291  	JSS is creating a manifest for JssNextWeb to ./sitecore/manifest...
+13:58:39.293  	Enabling TypeScript transpilation for the manifest...
+13:58:41.717  	path or pattern './sitecore/pipelines/**/*.patch.js' did not match any files.
+13:58:41.717  	path or pattern './sitecore/pipelines/**/*.patch.ts' did not match any files.
+13:58:45.128  	copied media from: ./data/media/img/sc_logo.png to: sitecore/manifest/data/media/img/sc_logo.png
+13:58:45.129  	copied media from: ./data/media/img/jss_logo.png to: sitecore/manifest/data/media/img/jss_logo.png
+13:58:45.130  	copied media from: ./data/media/files/jss.pdf to: sitecore/manifest/data/media/files/jss.pdf
+13:58:45.132  	Manifest has been generated and written to ./sitecore/manifest/sitecore-import.json
+13:58:45.132  	JSS is manifest packaging JssNextWeb to ./sitecore/package...
+13:58:45.135  	Adding data/media/files/jss.pdf
+13:58:45.135  	Adding data/media/img/jss_logo.png
+13:58:45.135  	Adding data/media/img/sc_logo.png
+13:58:45.136  	Adding sitecore-import.json
+13:58:45.148  	Wrote sitecore/package/JssNextWeb.1623063525132.manifest.zip
+13:58:45.156  	Sending package sitecore/package/JssNextWeb.1623063525132.manifest.zip to https://mykc-xpsingle-single.azurewebsites.net/sitecore/api/jss/import...
+13:58:45.786  	Sitecore has accepted import task JSSImport-JssNextWeb-10:58:45 AM
+13:58:47.108  	Job started: JSSImport-JssNextWeb-10:58:45 AM
+13:58:47.108  	Importing JssNextWeb as sitecore\JssImport
+13:58:47.108  	Import database is master
+13:58:47.108  	Import data contains:
+13:58:47.108  		Templates - 28
+13:58:47.108  		Renderings - 26
+13:58:47.108  		Placeholders - 7
+13:58:47.108  		Route Items - 6
+13:58:47.108  		Other Items - 12
+13:58:47.109  		Dictionary Items - 4
+13:58:47.110  	Import language is en
+13:58:48.447  	Skipping data update of /sitecore/content/JssNextWeb/Components/Styleguide/ContentReuse/LoremIpsumContentBlock because item already exists and is not writable by import user.
+13:58:48.447  	Skipping data update of /sitecore/content/JssNextWeb/Content/Styleguide/ContentListField/Item1 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/Content/Styleguide/ContentListField/Item2 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/Content/Styleguide/ItemLinkField/Item1 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/Content/Styleguide/ItemLinkField/Item2 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/graphql because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/graphql/sample-1 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/graphql/sample-2 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/styleguide because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/styleguide/custom-route-type because item already exists and is not writable by import user.
+13:58:48.448  	Reloaded all GraphQL schemas.
+13:58:48.448  	Job ended: JSSImport-JssNextWeb-10:58:45 AM (units processed: )
+13:58:48.448  	Import is complete.
+13:58:48.448  	IMPORT WARNING(S) OCCURRED!
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/Components/Styleguide/ContentReuse/LoremIpsumContentBlock because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/Content/Styleguide/ContentListField/Item1 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/Content/Styleguide/ContentListField/Item2 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/Content/Styleguide/ItemLinkField/Item1 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/Content/Styleguide/ItemLinkField/Item2 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/graphql because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/graphql/sample-1 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/graphql/sample-2 because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/styleguide because item already exists and is not writable by import user.
+13:58:48.448  	Skipping data update of /sitecore/content/JssNextWeb/home/styleguide/custom-route-type because item already exists and is not writable by import user.
+13:58:48.476  	data
+13:58:48.476  	jss-create.js
+13:58:48.476  	LICENSE.txt
+13:58:48.476  	next.config.js
+13:58:48.476  	next.config.__vercel_builder_backup__.js
+13:58:48.476  	next-env.d.ts
+13:58:48.476  	node_modules
+13:58:48.476  	package.json
+13:58:48.476  	package-lock.json
+13:58:48.476  	public
+13:58:48.476  	README.md
+13:58:48.476  	scjssconfig.json
+13:58:48.476  	scripts
+13:58:48.476  	sitecore
+13:58:48.476  	src
+13:58:48.476  	tsconfig.json
+13:58:48.476  	tsconfig.scripts.json
+13:58:48.677  	> jss-sample-nextjs@16.1.0-canary.44 build /vercel/path0/samples/nextjs
+13:58:48.677  	> npm-run-all --serial bootstrap next:build
+13:58:49.082  	> jss-sample-nextjs@16.1.0-canary.44 bootstrap /vercel/path0/samples/nextjs
+13:58:49.082  	> ts-node --project tsconfig.scripts.json scripts/bootstrap.ts && graphql-let
+13:58:53.692  	Writing runtime config to /vercel/path0/samples/nextjs/src/temp/config.js
+13:58:53.753  	Registering JSS component ContentBlock
+13:58:53.753  	Registering JSS component Styleguide-FieldUsage-Checkbox
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-ContentList
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-Custom
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-Date
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-File
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-Image
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-ItemLink
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-Link
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-Number
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-RichText
+13:58:53.754  	Registering JSS component Styleguide-FieldUsage-Text
+13:58:53.754  	Registering JSS component GraphQL-ConnectedDemo
+13:58:53.754  	Registering JSS component GraphQL-IntegratedDemo
+13:58:53.754  	Registering JSS component GraphQL-Layout
+13:58:53.754  	Registering JSS component Styleguide-ComponentParams
+13:58:53.754  	Registering JSS component Styleguide-CustomRouteType
+13:58:53.755  	Registering JSS component Styleguide-Layout-Reuse
+13:58:53.755  	Registering JSS component Styleguide-Layout-Tabs-Tab
+13:58:53.755  	Registering JSS component Styleguide-Layout-Tabs
+13:58:53.755  	Registering JSS component Styleguide-Layout
+13:58:53.755  	Registering JSS component Styleguide-Multilingual
+13:58:53.755  	Registering JSS component Styleguide-RouteFields
+13:58:53.755  	Registering JSS component Styleguide-Section
+13:58:53.755  	Registering JSS component Styleguide-SitecoreContext
+13:58:53.755  	Registering JSS component Styleguide-Specimen
+13:58:53.755  	Registering JSS component Styleguide-Tracking
+13:58:53.755  	Writing component factory to /vercel/path0/samples/nextjs/src/temp/componentFactory.ts
+13:58:55.861  	[ graphql-let ] Running graphql-codegen...
+13:58:56.624  	[ graphql-let ] Generating .d.ts...
+13:58:59.476  	[ graphql-let ] 1 .d.ts were generated.
+13:58:59.711  	> jss-sample-nextjs@16.1.0-canary.44 next:build /vercel/path0/samples/nextjs
+13:58:59.711  	> next build
+13:59:00.417  	Browserslist: caniuse-lite is outdated. Please run:
+13:59:00.417  	npx browserslist@latest --update-db
+13:59:00.516  	Loaded env from /vercel/path0/samples/nextjs/.env
+13:59:00.590  	info  - Creating an optimized production build...
+13:59:00.608  	Attention: Next.js now collects completely anonymous telemetry regarding usage.
+13:59:00.608  	This information is used to shape Next.js' roadmap and prioritize features.
+13:59:00.608  	You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+13:59:00.609  	https://nextjs.org/telemetry
+13:59:05.634  	Browserslist: caniuse-lite is outdated. Please run:
+13:59:05.634  	npx browserslist@latest --update-db
+13:59:05.634  	Why you should do it regularly:
+13:59:05.634  	https://github.com/browserslist/browserslist#browsers-data-updating
+13:59:21.286  	info  - Compiled successfully
+13:59:21.286  	info  - Collecting page data...
+13:59:21.701  	2021-06-07T10:59:21.700Z sitecore-jss:dictionary fetching site root for en JssNextWeb
+13:59:21.704  	2021-06-07T10:59:21.704Z sitecore-jss:sitemap request: { url: 'https://mykc-xpsingle-single.azurewebsites.net/sitecore/api/graph/edge', headers: { sc_apikey: '{9D2ECD0F-68F1-461D-B3FB-2EFAFEBCB232}' }, query: '\n' + '  query AppRootQuery($jssAppTemplateId: String!, $siteName: String!, $language: String!) {\n' + '    layout(site: $siteName, routePath: "/", language: $language) {\n' + '      homePage: item {\n' + '        rootItem: ancestors(includeTemplateIDs: [$jssAppTemplateId]) {\n' + '          id\n' + '        }\n' + '      }\n' + '    }\n' + '  }\n', variables: { jssAppTemplateId: '061cba1554744b918a0617903b102b82', siteName: 'JssNextWeb', language: 'en' } }
+13:59:22.219  	2021-06-07T10:59:22.219Z sitecore-jss:sitemap response: { layout: { homePage: { rootItem: [Array] } } }
+13:59:22.219  	2021-06-07T10:59:22.219Z sitecore-jss:sitemap fetching sitemap data for en
+13:59:22.220  	2021-06-07T10:59:22.220Z sitecore-jss:sitemap request: { url: 'https://mykc-xpsingle-single.azurewebsites.net/sitecore/api/graph/edge', headers: { sc_apikey: '{9D2ECD0F-68F1-461D-B3FB-2EFAFEBCB232}' }, query: '\n' + '  query SitemapQuery(\n' + '    $rootItemId: String!\n' + '    $language: String!\n' + '    $pageSize: Int = 10\n' + '    $hasLayout: String = "true"\n' + '    $after: String\n' + '  ) {\n' + '    search(\n' + '      where: {\n' + '        AND: [\n' + '          { name: "_path", value: $rootItemId, operator: CONTAINS }\n' + '          { name: "_language", value: $language }\n' + '          { name: "_hasLayout", value: $hasLayout }\n' + '        ]\n' + '      }\n' + '      first: $pageSize\n' + '      after: $after\n' + '    ) {\n' + '      total\n' + '      pageInfo {\n' + '        endCursor\n' + '        hasNext\n' + '      }\n' + '      results {\n' + '        url {\n' + '          path\n' + '        }\n' + '      }\n' + '    }\n' + '  }\n', variables: { rootItemId: '6235E376D0785A059E1FB89B533104AD', language: 'en', pageSize: undefined, after: '' } }
+13:59:22.222  	2021-06-07T10:59:22.221Z sitecore-jss:sitemap fetching sitemap data for da-DK
+13:59:22.222  	2021-06-07T10:59:22.222Z sitecore-jss:sitemap request: { url: 'https://mykc-xpsingle-single.azurewebsites.net/sitecore/api/graph/edge', headers: { sc_apikey: '{9D2ECD0F-68F1-461D-B3FB-2EFAFEBCB232}' }, query: '\n' + '  query SitemapQuery(\n' + '    $rootItemId: String!\n' + '    $language: String!\n' + '    $pageSize: Int = 10\n' + '    $hasLayout: String = "true"\n' + '    $after: String\n' + '  ) {\n' + '    search(\n' + '      where: {\n' + '        AND: [\n' + '          { name: "_path", value: $rootItemId, operator: CONTAINS }\n' + '          { name: "_language", value: $language }\n' + '          { name: "_hasLayout", value: $hasLayout }\n' + '        ]\n' + '      }\n' + '      first: $pageSize\n' + '      after: $after\n' + '    ) {\n' + '      total\n' + '      pageInfo {\n' + '        endCursor\n' + '        hasNext\n' + '      }\n' + '      results {\n' + '        url {\n' + '          path\n' + '        }\n' + '      }\n' + '    }\n' + '  }\n', variables: { rootItemId: '6235E376D0785A059E1FB89B533104AD', language: 'da-DK', pageSize: undefined, after: '' } }
+13:59:22.622  	2021-06-07T10:59:22.622Z sitecore-jss:sitemap response: { search: { total: 0, pageInfo: { endCursor: 'MA==', hasNext: false }, results: [] } }
+13:59:22.623  	2021-06-07T10:59:22.623Z sitecore-jss:sitemap response: { search: { total: 0, pageInfo: { endCursor: 'MA==', hasNext: false }, results: [] } }
+13:59:22.634  	info  - Generating static pages (0/3)
+13:59:23.047  	info  - Generating static pages (3/3)
+13:59:23.048  	info  - Finalizing page optimization...
+13:59:23.086  	Page                              Size     First Load JS
+13:59:23.086  	┌   /_app                         0 B            74.4 kB
+13:59:23.086  	├ ● /[[...path]]                  26.6 kB         128 kB
+13:59:23.086  	├ ○ /404                          228 B           102 kB
+13:59:23.086  	├ λ /api/editing/data/[key]       0 B            74.4 kB
+13:59:23.086  	├ λ /api/editing/render           0 B            74.4 kB
+13:59:23.086  	└ λ /api/track/[action]           0 B            74.4 kB
+13:59:23.086  	+ First Load JS shared by all     74.4 kB
+13:59:23.086  	  ├ chunks/02133967.bca366.js     68 B
+13:59:23.086  	  ├ chunks/commons.8f1ec2.js      16.9 kB
+13:59:23.086  	  ├ chunks/framework.07f463.js    46.6 kB
+13:59:23.086  	  ├ chunks/main.f8398b.js         6.96 kB
+13:59:23.086  	  ├ chunks/pages/_app.1eee0f.js   3.08 kB
+13:59:23.086  	  ├ chunks/webpack.e06743.js      751 B
+13:59:23.086  	  ├ css/048c5e931b1645806b98.css  485 B
+13:59:23.086  	  └ css/981f88a1a62f4959aa75.css  23.1 kB
+13:59:23.087  	λ  (Lambda)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+13:59:23.087  	○  (Static)  automatically rendered as static HTML (uses no initial props)
+13:59:23.087  	●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
+13:59:23.087  	   (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
+13:59:28.456  	Traced Next.js serverless functions for external files in: 5.192s
+13:59:29.407  	Compressed shared serverless function files: 950.736ms
+13:59:29.509  	All serverless functions created in: 101.135ms
+13:59:30.430  	Uploading build outputs...
+13:59:30.640  	Deploying build outputs...
+13:59:38.721  	Build completed. Populating build cache...
+13:59:58.927  	Uploading build cache [45.66 MB]...
+14:00:01.109  	Build cache uploaded: 2.182s
+14:00:01.635  	Done with "package.json"
