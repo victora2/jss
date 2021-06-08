@@ -18,8 +18,7 @@ function generateComponentFactory(components: ComponentFile[]): string {
 // See scripts/generate-component-factory.ts to modify the generation of this file.
 import dynamic from 'next/dynamic'
 ${components
-  .map((component) => `const ${component.moduleName} = dynamic(() => import(
-    '${component.path}'));`)
+  .map((component) => `const ${component.moduleName} = dynamic(() => import('${component.path}'));`)
   .join('\n')}
 
 const components = new Map();
