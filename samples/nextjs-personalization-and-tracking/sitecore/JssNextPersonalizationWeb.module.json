@@ -1,0 +1,37 @@
+{
+  "namespace": "JssNextPersonalizationWeb",
+  "items": {
+    "includes": [
+      {
+        "allowedPushOperations": "createUpdateAndDelete",
+        "name": "templates",
+        "path": "/sitecore/templates/Project/JssNextPersonalizationWeb",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "allowedPushOperations": "createUpdateAndDelete",
+        "name": "content",
+        "path": "/sitecore/content/JssNextPersonalizationWeb",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "allowedPushOperations": "createUpdateAndDelete",
+        "name": "layout",
+        "path": "/sitecore/layout/Layouts/Project/JssNextPersonalizationWeb",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "allowedPushOperations": "createUpdateAndDelete",
+        "name": "placeholders",
+        "path": "/sitecore/layout/Placeholder Settings/Project/JssNextPersonalizationWeb",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "allowedPushOperations": "createUpdateAndDelete",
+        "name": "renderings",
+        "path": "/sitecore/layout/Renderings/Project/JssNextPersonalizationWeb",
+        "scope": "itemAndDescendants"
+      }
+    ]
+  }
+}

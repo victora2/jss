@@ -29,31 +29,35 @@ This repository contains the following sample applications:
 
    Consult the [documentation](http://jss.sitecore.com/docs/nextjs/getting-started-nextjs/why-nextjs) and remember to check out the heavily commented code in the sample application.
 
-2. [React](/samples/react)
+2. [Next.js personalization and tracking](/samples/nextjs-personalization-and-tracking)
+
+   The Next.js-based sample application demonstrates common personalization and tracking use cases.
+
+3. [React](/samples/react)
 
    Built using [create-react-app](https://github.com/facebook/create-react-app) as a starting point. Supports out-of-the-box Sitecore functionalities (i18n, routing, GraphQL, set &lt;title&gt; tags) and demonstrates how to work with various Sitecore data types, placeholder nesting, and wrapping techniques, and other helpful JSS patterns. The application code is heavily commented, but [documentation also exists](http://jss.sitecore.com/docs/client-frameworks/react/sample-app).
 
-3. [Vue](/samples/vue)
+4. [Vue](/samples/vue)
 
    Built using [@vue/cli](https://cli.vuejs.org/) as a starting point. Supports out-of-the-box Sitecore functionalities (i18n, routing, GraphQL, set &lt;title&gt; tags) and demonstrates how to work with various Sitecore data types, placeholder nesting, and wrapping techniques, and other helpful JSS patterns. The application code is heavily commented, but [documentation also exists](http://jss.sitecore.com/docs/client-frameworks/vue/sample-app).
 
-4. [Angular](/samples/angular)
+5. [Angular](/samples/angular)
 
    Built using [angular-cli](https://cli.angular.io/) as a starting point. Supports out-of-the-box Sitecore functionalities (i18n, routing, GraphQL, set &lt;title&gt; tags) and demonstrates how to work with various Sitecore data types, placeholder nesting, and wrapping techniques, and other helpful JSS patterns. The application code is heavily commented, but [documentation also exists](http://jss.sitecore.com/docs/client-frameworks/angular/sample-app).
 
-5. [Embedded JSS App within Sitecore MVC](/samples/sitecore-embedded-jss-app)
+6. [Embedded JSS App within Sitecore MVC](/samples/sitecore-embedded-jss-app)
 
    This app demonstrates how to embed a client-side JSS application inside an existing Sitecore MVC site instead of running a standalone JSS site. This technique essentially embeds the JSS app's markup and app wrapper tag within a Sitecore rendering. [Documentation](http://jss.sitecore.com/docs/techniques/mvc-integration/client-side-embedding).
 
-6. [React Native](/samples/react-native)
+7. [React Native](/samples/react-native)
 
    This app demonstrates experimental JSS usage with React Native. Due to the experimental nature of React Native support in JSS, this app does not have feature parity with the other framework samples (e.g., React, Vue). [Documentation](http://jss.sitecore.com/docs/client-frameworks/react-native)
 
-7. [~~Sitecore JavaScript rendering~~](/samples/sitecore-javascript-renderings) [Deprecated]
+8. [~~Sitecore JavaScript rendering~~](/samples/sitecore-javascript-renderings) [Deprecated]
 
    This project demonstrates experimental support for creating Sitecore renderings that will server-side render individual JavaScript components or apps. The Sitecore JavaScript renderings can be used alongside traditional MVC-based renderings. [Documentation](http://jss.sitecore.com/docs/techniques/mvc-integration/javascript-rendering)
 
-8. [Headless Server-Side Rendering with Node.js](/samples/node-headless-ssr-proxy)
+9. [Headless Server-Side Rendering with Node.js](/samples/node-headless-ssr-proxy)
 
    JSS supports headless server-side rendering using any service that supports hosting Node.js applications. [Documentation](http://jss.sitecore.com/docs/techniques/ssr/headless-mode-ssr).
 
