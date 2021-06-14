@@ -8,7 +8,7 @@ export interface ComponentFile {
 }
 
 /**
- * Generates the contents of the component factory file using a predefined string template.
+ * Generates the contents of the component factory file using a predefined string template. Will make an import dynamic based on the filename.
  * @param components - the list of component files to include
  * @returns component factory file contents
  */
@@ -18,20 +18,23 @@ function generateComponentFactory(components: ComponentFile[]): string {
 // See scripts/generate-component-factory.ts to modify the generation of this file.
 import dynamic from 'next/dynamic'
 ${components
-  .map((component) => `const ${component.moduleName} = dynamic(import('${component.path}'));`)
-  .join('\n')}
+      .map((component) => component.path.includes('dynamic') ? `const ${component.moduleName} = dynamic(() =>
+    import('${component.path}')
+      .then((module: any) => module),
+      { loading: () => <>{'loading'}</>, ssr: false});` : `import * as ${component.moduleName} from '${component.path}';`)
+      .join('\n')}
 
 const components = new Map();
 ${components
-  .map((component) => `components.set('${component.componentName}', ${component.moduleName});`)
-  .join('\n')}
+      .map((component) => `components.set('${component.componentName}', ${component.moduleName});`)
+      .join('\n')}
 
 export function componentModule(componentName: string) {
   return components.get(componentName);
 };
 
 export function componentFactory(componentName: string) {
-  return components.get(componentName);
+  return components.get(componentName)?.default ?? components.get(componentName);
 };
 `;
 }

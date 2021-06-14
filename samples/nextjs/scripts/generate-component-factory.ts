@@ -61,7 +61,10 @@ function watchComponentFactory() {
 function writeComponentFactory() {
   const fileContent = generateComponentFactory(getComponentList(componentRootPath));
   console.log(`Writing component factory to ${componentFactoryPath}`);
-  fs.writeFileSync(componentFactoryPath, fileContent, {
+  /* make this file extension .tsx so that it won't complain about 
+    any dynamic component's loaders
+  */
+  fs.writeFileSync(componentFactoryPath.replace('.ts', '.tsx'), fileContent, {
     encoding: 'utf8',
   });
 }
