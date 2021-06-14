@@ -100,4 +100,5 @@ export {
   useSitecoreContext,
   withExperienceEditorChromes,
   withPlaceholder,
+  withDynamicImport
 } from '@sitecore-jss/sitecore-jss-react';
