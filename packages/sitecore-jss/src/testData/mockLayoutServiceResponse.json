@@ -1,0 +1,12 @@
+{
+  "sitecore": {
+    "context": {
+      "pageEditing": false,
+      "site": { "name": "JssNextWeb" }
+    },
+    "route": {
+      "name": "styleguide",
+      "layoutId": "xxx"
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { expect, use } from 'chai';
 import spies from 'chai-spies';
 import nock from 'nock';
 import { GraphQLLayoutService } from './graphql-layout-service';
+import { mochaHooks } from '../testData/integrationHook';
 
 use(spies);
 
@@ -12,59 +13,55 @@ describe('GraphQLLayoutService', () => {
     nock.cleanAll();
   });
 
+  // try to reuse for POC
   it('should fetch layout data', async () => {
-    nock('http://sctest', {
-      reqheaders: {
-        sc_apikey: apiKey,
-      },
-    })
-      .post('/graphql', (body) => {
-        return (
-          body.query.replace(/\n|\s/g, '') ===
-          'query{layout(site:"supersite",routePath:"/styleguide",language:"da-DK"){item{rendered}}}'
-        );
+    const { apiKey, endpoint, siteName, env, response } = mochaHooks();
+    console.log(apiKey, endpoint, siteName, env, response);
+
+    if (env === 'dev') {
+      console.log('env: ', env);
+      nock('http://sctest', {
+        reqheaders: {
+          sc_apikey: apiKey,
+        },
       })
-      .reply(200, {
-        data: {
-          layout: {
-            item: {
-              rendered: {
-                sitecore: {
-                  context: {
-                    pageEditing: false,
-                    site: { name: 'JssNextWeb' },
-                  },
-                  route: {
-                    name: 'styleguide',
-                    layoutId: 'xxx',
+        .post('/graphql', (body) => {
+          return (
+            body.query.replace(/\n|\s/g, '') ===
+            'query{layout(site:"supersite",routePath:"/styleguide",language:"en"){item{rendered}}}'
+          );
+        })
+        .reply(200, {
+          data: {
+            layout: {
+              item: {
+                rendered: {
+                  sitecore: {
+                    context: {
+                      pageEditing: false,
+                      site: { name: 'JssNextWeb' },
+                    },
+                    route: {
+                      name: 'styleguide',
+                      layoutId: 'xxx',
+                    },
                   },
                 },
               },
             },
           },
-        },
-      });
+        });
+    }
 
     const service = new GraphQLLayoutService({
-      endpoint: 'http://sctest/graphql',
-      apiKey: apiKey,
-      siteName: 'supersite',
+      endpoint,
+      apiKey,
+      siteName,
     });
 
-    const data = await service.fetchLayoutData('/styleguide', 'da-DK');
+    const data = await service.fetchLayoutData('/styleguide', 'en');
 
-    expect(data).to.deep.equal({
-      sitecore: {
-        context: {
-          pageEditing: false,
-          site: { name: 'JssNextWeb' },
-        },
-        route: {
-          name: 'styleguide',
-          layoutId: 'xxx',
-        },
-      },
-    });
+    expect(data).to.deep.equal(response);
   });
 
   it('should fetch layout data if locale is not provided', async () => {
