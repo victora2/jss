@@ -2,7 +2,7 @@ import { expect, use } from 'chai';
 import spies from 'chai-spies';
 import nock from 'nock';
 import { GraphQLLayoutService } from './graphql-layout-service';
-import { mochaHooks } from '../testData/integrationHook';
+import { mochaHooksGql } from '../testData/integrationHook';
 
 use(spies);
 
@@ -15,8 +15,7 @@ describe('GraphQLLayoutService', () => {
 
   // try to reuse for POC
   it('should fetch layout data', async () => {
-    const { apiKey, endpoint, siteName, env, response } = mochaHooks();
-    console.log(apiKey, endpoint, siteName, env, response);
+    const { apiKey, endpoint, siteName, env, response } = mochaHooksGql();
 
     if (env === 'dev') {
       console.log('env: ', env);
