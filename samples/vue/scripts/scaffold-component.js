@@ -78,17 +78,15 @@ function editLineEndings(content) {
 function getContactComponentTemplate(){
   const componentTemplate = `<template>
   <div>
-    <p>${componentName} Component</p>
-    <sc-text :field="fields.heading" />
     <form>
     <fieldset>
-      <legend>Personalia:</legend>
-      <label for="fname">First name:</label>
-      <sc-text id="fname" :field="fields.firstName" /> <br><br>
-      <label for="lname">Last name:</label>
-      <sc-text id="lname" :field="fields.lastName" /> <br><br>
-      <label for="email">Email:</label>
-      <sc-text id="email" :field="fields.email" /> <br><br>
+      <legend><sc-text :field="fields.heading" /></legend>
+      <label for="fname"><sc-text :field="fields.firstName" /></label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="lname"><sc-text :field="fields.lastName" /></label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <label for="email"><sc-text :field="fields.email" /></label>
+      <input type="email" id="email" name="email"><br><br>
       <input type="submit" value="Submit">
     </fieldset>
   </form>
