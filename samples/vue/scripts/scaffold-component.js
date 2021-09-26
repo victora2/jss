@@ -35,7 +35,7 @@ function callback(err) {
   console.log('contact data was copied to destination');
 }
 if (componentName == 'Contact') {
-  fs.mkdir(contactComponentDataRoutesPath);
+  fs.mkdir(contactComponentDataRoutesPath, callback);
   fs.copyFile(
     scriptTempContactPath + '/en.yml',
     contactComponentDataRoutesPath + '/en.yml',
