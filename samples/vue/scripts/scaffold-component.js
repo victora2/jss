@@ -169,10 +169,10 @@ function getContactManifestTemplate(){
     manifest.addComponent({
       name: '${componentName}',
       icon: SitecoreIcon.DocumentTag,
-      fields: [{ name: 'heading', type: CommonFieldTypes.SingleLineText }],
-      fields: [{ name: 'firstName', type: CommonFieldTypes.SingleLineText }],
-      fields: [{ name: 'lastName', type: CommonFieldTypes.SingleLineText }],
-      fields: [{ name: 'email', type: CommonFieldTypes.SingleLineText }],
+      fields: [{ name: 'heading', type: CommonFieldTypes.SingleLineText },
+               { name: 'firstName', type: CommonFieldTypes.SingleLineText },
+               { name: 'lastName', type: CommonFieldTypes.SingleLineText },
+               { name: 'email', type: CommonFieldTypes.SingleLineText }],
       /*
       If the component implementation uses the 'Placeholder' component to expose a placeholder,
       register it here, or components added to that placeholder will not be returned by Sitecore:
