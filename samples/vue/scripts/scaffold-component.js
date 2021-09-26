@@ -24,9 +24,17 @@ if (!/[A-Z][A-Za-z0-9]+/.test(componentName)) {
 }
 
 const componentManifestDefinitionsPath = 'sitecore/definitions/components';
+const contactComponentDataRoutesPath = 'data/routes/contact';
 const componentRootPath = 'src/components';
+const scriptTempContactPath = 'scripts/temp/contact';
 
 let manifestOutputPath = null;
+
+if (componentName == 'Contact') {
+  fs.copyFile(scriptTempContactPath + '/en.yml', contactComponentDataRoutesPath + '/en.yml');
+  fs.copyFile(scriptTempContactPath + '/da-DK.yml', contactComponentDataRoutesPath + '/da-DK.yml');
+
+}
 
 if (fs.existsSync(componentManifestDefinitionsPath)) {
   manifestOutputPath = scaffoldManifest();
