@@ -2,7 +2,7 @@ fields:
   pageTitle: Contact DK
 placeholders:
   jss-main:
-  - componentName: Contact DK
+  - componentName: Contact
     fields:
       heading:  Contact DK
       firstName: First Name DK
