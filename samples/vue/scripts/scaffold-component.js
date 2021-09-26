@@ -31,6 +31,7 @@ const scriptTempContactPath = 'scripts/temp/contact';
 let manifestOutputPath = null;
 
 if (componentName == 'Contact') {
+  fs.mkdir(contactComponentDataRoutesPath);
   fs.copyFile(scriptTempContactPath + '/en.yml', contactComponentDataRoutesPath + '/en.yml');
   fs.copyFile(scriptTempContactPath + '/da-DK.yml', contactComponentDataRoutesPath + '/da-DK.yml');
 
