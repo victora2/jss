@@ -75,8 +75,51 @@ function editLineEndings(content) {
   return content.replace(/\r|\n/gm, '\r\n');
 }
 
-function scaffoldComponent() {
+function getContactComponentTemplate(){
   const componentTemplate = `<template>
+  <div>
+    <p>${componentName} Component</p>
+    <sc-text :field="fields.heading" />
+    <form>
+    <fieldset>
+      <legend>Personalia:</legend>
+      <label for="fname">First name:</label>
+      <sc-text id="fname" :field="fields.firstName" /> <br><br>
+      <label for="lname">Last name:</label>
+      <sc-text id="lname" :field="fields.lastName" /> <br><br>
+      <label for="email">Email:</label>
+      <sc-text id="email" :field="fields.email" /> <br><br>
+      <input type="submit" value="Submit">
+    </fieldset>
+  </form>
+  </div>
+</template>
+
+<script>
+import { Text } from '@sitecore-jss/sitecore-jss-vue';
+
+export default {
+  name: '${componentName}',
+  components: {
+    ScText: Text,
+  },
+  props: {
+    fields: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
+};
+</script>
+`;
+
+  return componentTemplate;
+}
+function scaffoldComponent() {
+  let componentTemplate = null;
+  if (componentName == 'contact') componentTemplate = getContactComponentTemplate();
+  else
+    componentTemplate = `<template>
   <div>
     <p>${componentName} Component</p>
     <sc-text :field="fields.heading" />
