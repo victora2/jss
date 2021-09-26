@@ -11,17 +11,17 @@
     <nav class="my-2 my-md-0 mr-md-3">
       <a
         class="p-2 text-dark"
-        href="https://jss.sitecore.com"
+        href="https://github.com/victora2/cli2Cms"
         target="_blank"
         rel="noopener noreferrer"
       >
         {{ $t('Documentation') }}
       </a>
-      <router-link to="/styleguide" class="p-2 text-dark">
-        {{ $t('Styleguide') }}
+      <router-link to="/company" class="p-2 text-dark">
+        {{ $t('Company') }}
       </router-link>
-      <router-link to="/graphql" class="p-2 text-dark">
-        {{ $t('GraphQL') }}
+      <router-link to="/contact" class="p-2 text-dark disabled">
+        {{ $t('Contact') }}
       </router-link>
       <button class="btn btn-secondary align-baseline" type="button" v-on:click="toggleContext">
         {{ contextButtonText }}
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import logo from './assets/sc_logo.svg';
+import logo from './assets/valtech_logo.svg';
 
 export default {
   name: 'Navigation',
