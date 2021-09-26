@@ -24,9 +24,29 @@ if (!/[A-Z][A-Za-z0-9]+/.test(componentName)) {
 }
 
 const componentManifestDefinitionsPath = 'sitecore/definitions/components';
+const contactComponentDataRoutesPath = 'data/routes/contact';
 const componentRootPath = 'src/components';
+const scriptTempContactPath = 'scripts/temp/contact';
 
 let manifestOutputPath = null;
+
+function callback(err) {
+  if (err) throw err;
+  console.log('contact data was copied to destination');
+}
+if (componentName == 'Contact') {
+  fs.mkdir(contactComponentDataRoutesPath, callback);
+  fs.copyFile(
+    scriptTempContactPath + '/en.yml',
+    contactComponentDataRoutesPath + '/en.yml',
+    callback
+  );
+  fs.copyFile(
+    scriptTempContactPath + '/da-DK.yml',
+    contactComponentDataRoutesPath + '/da-DK.yml',
+    callback
+  );
+}
 
 if (fs.existsSync(componentManifestDefinitionsPath)) {
   manifestOutputPath = scaffoldManifest();
@@ -78,17 +98,15 @@ function editLineEndings(content) {
 function getContactComponentTemplate(){
   const componentTemplate = `<template>
   <div>
-    <p>${componentName} Component</p>
-    <sc-text :field="fields.heading" />
     <form>
     <fieldset>
-      <legend>Personalia:</legend>
-      <label for="fname">First name:</label>
-      <sc-text id="fname" :field="fields.firstName" /> <br><br>
-      <label for="lname">Last name:</label>
-      <sc-text id="lname" :field="fields.lastName" /> <br><br>
-      <label for="email">Email:</label>
-      <sc-text id="email" :field="fields.email" /> <br><br>
+      <legend><sc-text :field="fields.heading" /></legend>
+      <label for="fname"><sc-text :field="fields.firstName" /></label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="lname"><sc-text :field="fields.lastName" /></label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <label for="email"><sc-text :field="fields.email" /></label>
+      <input type="email" id="email" name="email"><br><br>
       <input type="submit" value="Submit">
     </fieldset>
   </form>
@@ -169,10 +187,10 @@ function getContactManifestTemplate(){
     manifest.addComponent({
       name: '${componentName}',
       icon: SitecoreIcon.DocumentTag,
-      fields: [{ name: 'heading', type: CommonFieldTypes.SingleLineText }],
-      fields: [{ name: 'firstName', type: CommonFieldTypes.SingleLineText }],
-      fields: [{ name: 'lastName', type: CommonFieldTypes.SingleLineText }],
-      fields: [{ name: 'email', type: CommonFieldTypes.SingleLineText }],
+      fields: [{ name: 'heading', type: CommonFieldTypes.SingleLineText },
+               { name: 'firstName', type: CommonFieldTypes.SingleLineText },
+               { name: 'lastName', type: CommonFieldTypes.SingleLineText },
+               { name: 'email', type: CommonFieldTypes.SingleLineText }],
       /*
       If the component implementation uses the 'Placeholder' component to expose a placeholder,
       register it here, or components added to that placeholder will not be returned by Sitecore:
