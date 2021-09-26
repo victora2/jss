@@ -29,4 +29,9 @@ jss test:unit
 ```
 jss test:e2e
 ```
+
+### How to use this custom Jss template
+```
+ jss create myonevaltechapp vue --repository victora2/jss --branch OneValtech
+```
 ![jss-create-oneValtech-template](https://user-images.githubusercontent.com/91409063/134807820-de17c8ac-9ab8-4f59-8b3c-3af97c0f9f84.JPG)
