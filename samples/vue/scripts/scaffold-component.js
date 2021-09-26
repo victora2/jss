@@ -30,11 +30,22 @@ const scriptTempContactPath = 'scripts/temp/contact';
 
 let manifestOutputPath = null;
 
+function callback(err) {
+  if (err) throw err;
+  console.log('contact data was copied to destination');
+}
 if (componentName == 'Contact') {
   fs.mkdir(contactComponentDataRoutesPath);
-  fs.copyFile(scriptTempContactPath + '/en.yml', contactComponentDataRoutesPath + '/en.yml');
-  fs.copyFile(scriptTempContactPath + '/da-DK.yml', contactComponentDataRoutesPath + '/da-DK.yml');
-
+  fs.copyFile(
+    scriptTempContactPath + '/en.yml',
+    contactComponentDataRoutesPath + '/en.yml',
+    callback
+  );
+  fs.copyFile(
+    scriptTempContactPath + '/da-DK.yml',
+    contactComponentDataRoutesPath + '/da-DK.yml',
+    callback
+  );
 }
 
 if (fs.existsSync(componentManifestDefinitionsPath)) {
