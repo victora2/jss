@@ -1,0 +1,10 @@
+fields:
+  pageTitle: Contact
+placeholders:
+  jss-main:
+    - componentName: Contact
+      fields:
+        heading: Contact
+        firstName: First Name
+        lastName: Last Name
+        email: Email Address
