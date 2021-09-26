@@ -117,7 +117,7 @@ export default {
 }
 function scaffoldComponent() {
   let componentTemplate = null;
-  if (componentName == 'contact') componentTemplate = getContactComponentTemplate();
+  if (componentName == 'Contact') componentTemplate = getContactComponentTemplate();
   else
     componentTemplate = `<template>
   <div>
@@ -184,9 +184,8 @@ function getContactManifestTemplate(){
 }
 
 function scaffoldManifest() {
-  let manifestTemplate  = null;
-  if(componentName == 'contact')
-    manifestTemplate = getContactManifestTemplate()
+  let manifestTemplate = null;
+  if (componentName == 'Contact') manifestTemplate = getContactManifestTemplate();
   else
     manifestTemplate = `// eslint-disable-next-line no-unused-vars
 import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore-jss-manifest';
